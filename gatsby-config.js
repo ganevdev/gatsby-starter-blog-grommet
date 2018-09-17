@@ -1,4 +1,4 @@
-const siteConfig = require('./site-config');
+const siteConfig = require('./site-config')
 
 module.exports = {
   siteMetadata: {
@@ -19,7 +19,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 1024,
             },
           },
           {
@@ -63,5 +63,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-flow`,
   ],
 }

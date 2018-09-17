@@ -3,9 +3,14 @@
   "description": "Starter Gatsby Blog wish grommet-v2",
   "version": "1.0.0",
   "author": "Ivan Ganev <iganevru@gmail.com>",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
   "dependencies": {
-        "grommet": "https://github.com/grommet/grommet/tarball/NEXT-stable",
-        "grommet-icons": "https://github.com/grommet/grommet-icons/tarball/stable",
+    "grommet": "https://github.com/grommet/grommet/tarball/NEXT-stable",
+    "grommet-icons": "^3.0.0",
     "gatsby": "next",
     "gatsby-plugin-feed": "next",
     "gatsby-plugin-google-analytics": "next",
@@ -16,12 +21,14 @@
     "gatsby-plugin-typography": "next",
     "gatsby-remark-copy-linked-files": "next",
     "gatsby-remark-images": "next",
+    "gatsby-image": "next",
     "gatsby-remark-responsive-iframe": "next",
     "gatsby-remark-smartypants": "next",
     "gatsby-source-filesystem": "next",
     "gatsby-transformer-remark": "next",
     "gatsby-transformer-sharp": "next",
     "gatsby-plugin-styled-components": "next",
+    "gatsby-plugin-flow": "next",
     "lodash": "^4.17.5",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -31,30 +38,22 @@
     "typography-breakpoint-constants": "^0.15.10",
     "typography-theme-wordpress-2016": "^0.15.10",
     "babel-plugin-styled-components": "^1.5.1",
-    "styled-components": "^3.3.2",
+    "styled-components": "^3.3.2"
   },
   "devDependencies": {
     "eslint": "^5.0.0",
     "eslint-plugin-react": "^7.7.0",
     "gh-pages": "^1.1.0",
-    "prettier": "^1.12.0"
-  },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "prettier": "^1.12.0",
+    "@babel/core": "^7.0.1",
+    "flow-bin": "^0.81.0"
   },
   "scripts": {
     "dev": "gatsby develop",
+    "develop": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "develop": "gatsby develop",
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"

@@ -1,6 +1,7 @@
 ---
 title: Hello World
-date: "2015-05-01T22:12:03.284Z"
+date: '2015-05-01T22:12:03.284Z'
+cover: './salty_egg.jpg'
 ---
 
 This is my first post on my new fake blog! How exciting!
