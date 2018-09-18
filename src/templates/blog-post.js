@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import CardProfile from '../components/CardProfile'
 import Layout from '../components/Layout'
 import { rhythm, scale } from '../utils/typography'
 
@@ -43,7 +42,6 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <CardProfile />
 
         <ul
           style={{

@@ -6,9 +6,10 @@ module.exports = {
   siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
 
   // Site Style:
-  fontFamily: 'Merriweather',
-  fontFamilyHeadings: 'Zilla Slab',
+  font: 'Merriweather',
+  fontHeadings: 'Zilla Slab',
   mainColor: '#7D4CDB',
+  backgroundColor: '#F6F6F6',
 
   // TODO:
   // backgroundColor: `#fff`,
