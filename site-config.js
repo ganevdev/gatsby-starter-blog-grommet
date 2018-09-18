@@ -8,8 +8,8 @@ module.exports = {
   // Site Style:
   font: 'Merriweather',
   fontHeadings: 'Zilla Slab',
-  mainColor: '#7D4CDB',
-  backgroundColor: '#F6F6F6',
+  mainColor: '#7D4CDB', // #7D4CDB
+  backgroundColor: '#F6F6F6', // #F6F6F6
 
   // TODO:
   // backgroundColor: `#fff`,

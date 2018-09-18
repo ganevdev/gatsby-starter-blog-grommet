@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
+
 import { Grommet, Heading, Anchor, Text } from 'grommet'
-import { base, grommet } from 'grommet/themes'
+
+import { siteTheme } from '../site-theme'
+
 import styled from 'styled-components'
 
 export class Navbar extends Component {
   render() {
     const rootPath = `${__PATH_PREFIX__}/`
     const SiteName = styled(Text)`
-      color: ${base.global.colors.brand};
-      font-family: ${grommet.heading.font.family};
+      color: ${siteTheme.global.colors.brand};
+      font-family: ${siteTheme.global.heading.font.family};
     `
 
     return (
