@@ -1,71 +1,34 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React, { Component } from 'react'
+import { Grommet } from 'grommet'
+import siteConfig from '../../site-config'
 
-import { rhythm, scale } from '../utils/typography'
+import Navbar from './Navbar'
 
-class Template extends React.Component {
+// https://github.com/grommet/grommet/wiki/Grommet-v2-theming-documentation
+// https://github.com/grommet/grommet/tree/NEXT/src/js/themes
+const siteConfigTheme = {
+  global: {
+    font: {
+      family: siteConfig.fontFamily,
+    },
+    heading: {
+      font: {
+        family: siteConfig.fontFamilyHeadings,
+      },
+    },
+    colors: {
+      brand: siteConfig.mainColor,
+    },
+  },
+}
+
+export default class Template extends Component {
   render() {
-    const { location, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
-
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            Gatsby Starter Blog
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: 'Montserrat, sans-serif',
-            marginTop: 0,
-            marginBottom: rhythm(-1),
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            Gatsby Starter Blog
-          </Link>
-        </h3>
-      )
-    }
     return (
-      <div
-        style={{
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
-        {header}
-        {children}
-      </div>
+      <Grommet theme={siteConfigTheme}>
+        <Navbar />
+        {this.props.children}
+      </Grommet>
     )
   }
 }
-
-export default Template

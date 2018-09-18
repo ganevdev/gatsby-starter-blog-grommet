@@ -1,4 +1,4 @@
-const siteConfig = require('./site-config')
+import siteConfig from './site-config'
 
 module.exports = {
   siteMetadata: {

@@ -1,16 +1,16 @@
-const path = require('path')
-
 module.exports = {
+  // Site Info:
   title: 'Gatsby Starter Blog',
   author: 'Kyle Mathews',
   description: 'A starter blog demonstrating what Gatsby can do.',
   siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
 
-  // siteTitle: `gatsby-starter-blog-grommet-v2`,
-  // siteTitleShort: `BlogGrommet`,
-  // siteDescription: `An opinionated starter for Gatsby.`,
-  // siteUrl: `/`,
-  // themeColor: `#000`,
+  // Site Style:
+  fontFamily: 'Merriweather',
+  fontFamilyHeadings: 'Zilla Slab',
+  mainColor: '#7D4CDB',
+
+  // TODO:
   // backgroundColor: `#fff`,
   // pathPrefix: null,
   // logo: path.resolve(__dirname, 'src/images/icon.png'),
