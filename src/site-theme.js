@@ -13,7 +13,7 @@ export const siteTheme = {
       },
     },
     colors: {
-      brand: siteConfig.mainColor,
+      brand: siteConfig.brandColor,
     },
   },
 }

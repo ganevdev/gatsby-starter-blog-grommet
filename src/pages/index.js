@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
@@ -6,14 +6,12 @@ import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
 import CardPost from '../components/CardPost'
 
-import { rhythm } from '../utils/typography'
-
-class BlogIndex extends React.Component {
+class BlogIndex extends Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const siteDescription = get(
       this,
-      'props.data.site.siteMetadata.description'
+      'props.data.site.siteMetadata.description',
     )
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
@@ -30,6 +28,7 @@ class BlogIndex extends React.Component {
             <div key={node.fields.slug}>
               <CardPost
                 link={node.fields.slug}
+                cover={node.frontmatter.cover.childImageSharp.fluid.src}
                 title={title}
                 date={node.frontmatter.date}
                 htmlExcerpt={{ __html: node.excerpt }}
@@ -62,6 +61,13 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
+            cover {
+              childImageSharp {
+                fluid {
+                  src
+                }
+              }
+            }
           }
         }
       }

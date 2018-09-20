@@ -3,8 +3,10 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
+import { Grommet, Box, Grid, Heading, Image, Button } from 'grommet'
+import { Previous as PreviousIcon, Next as NextIcon } from 'grommet-icons'
+
 import Layout from '../components/Layout'
-import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -15,59 +17,45 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={`${post.frontmatter.title} | ${siteTitle}`}
-        />
-        <h1>{post.frontmatter.title}</h1>
-        <img
-          title={post.frontmatter.title}
-          alt={post.frontmatter.title}
-          src={post.frontmatter.cover.childImageSharp.fluid.src}
-        />
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: 'block',
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            listStyle: 'none',
-            padding: 0,
-          }}
-        >
+        <Box round="small" margin="small">
+          <Helmet
+            htmlAttributes={{ lang: 'en' }}
+            meta={[{ name: 'description', content: siteDescription }]}
+            title={`${post.frontmatter.title} | ${siteTitle}`}
+          />
+          <Box basis="medium" fill="true">
+            <Image
+              round="small"
+              fit="cover"
+              title={post.frontmatter.title}
+              alt={post.frontmatter.title}
+              src={post.frontmatter.cover.childImageSharp.fluid.src}
+            />
+          </Box>
+          <Box pad="medium">
+            <Heading level="1">{post.frontmatter.title}</Heading>
+            <p>{post.frontmatter.date}</p>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          </Box>
+        </Box>
+        <Box direction="row" justify="center" gap="large" margin="medium">
           {previous && (
-            <li>
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            </li>
+            <Button
+              href={previous.fields.slug}
+              icon={<PreviousIcon />}
+              label="Previous"
+            />
           )}
 
           {next && (
-            <li>
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            </li>
+            <Button
+              href={next.fields.slug}
+              icon={<NextIcon />}
+              label="Next"
+              reverse
+            />
           )}
-        </ul>
+        </Box>
       </Layout>
     )
   }

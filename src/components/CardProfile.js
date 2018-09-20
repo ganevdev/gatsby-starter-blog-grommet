@@ -1,19 +1,25 @@
 import React from 'react'
-import { Box } from 'grommet'
+import { Box, Text } from 'grommet'
 
 import profilePic from './profile-pic.jpg'
 
 export default () => {
   return (
-    <Box border={{ color: 'brand', size: 'medium' }} pad="small" round="small">
+    <Box
+      round="small"
+      pad="small"
+      margin="small"
+      background="light-2"
+      // border={{ size: 'small', color: 'brand' }}
+    >
       <img src={profilePic} alt={`Kyle Mathews`} />
-      <p>
+      <Text size="small">
         Written by <strong>Kyle Mathews</strong> who lives and works in San
         Francisco building useful things.{' '}
         <a href="https://twitter.com/kylemathews">
           You should follow him on Twitter
         </a>
-      </p>
+      </Text>
     </Box>
   )
 }
