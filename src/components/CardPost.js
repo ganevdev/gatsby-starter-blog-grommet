@@ -14,6 +14,13 @@ const CardHover = styled.div`
   }
 `
 
+const BoxCover = styled(Box)`
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+`
+
 export default class extends Component {
   render() {
     return (
@@ -38,10 +45,10 @@ export default class extends Component {
                 left: 'small',
               }}
             >
-              <Box
+              <BoxCover
                 basis="medium"
                 fill="true"
-                round="small"
+                // round="small"
                 background={{ image: `url(${this.props.cover})` }}
               />
               <Box pad="medium">
