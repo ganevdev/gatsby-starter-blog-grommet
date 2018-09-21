@@ -17,45 +17,56 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <Box round="small" margin="small">
-          <Helmet
-            htmlAttributes={{ lang: 'en' }}
-            meta={[{ name: 'description', content: siteDescription }]}
-            title={`${post.frontmatter.title} | ${siteTitle}`}
-          />
-          <Box basis="medium" fill="true">
-            <Image
-              round="small"
-              fit="cover"
-              title={post.frontmatter.title}
-              alt={post.frontmatter.title}
-              src={post.frontmatter.cover.childImageSharp.fluid.src}
-            />
-          </Box>
-          <Box pad="medium">
-            <Heading level="1">{post.frontmatter.title}</Heading>
-            <p>{post.frontmatter.date}</p>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          </Box>
-        </Box>
-        <Box direction="row" justify="center" gap="large" margin="medium">
-          {previous && (
-            <Button
-              href={previous.fields.slug}
-              icon={<PreviousIcon />}
-              label="Previous"
-            />
-          )}
+        <article>
+          <Box round="small" margin="small">
+            <header>
+              <Helmet
+                htmlAttributes={{ lang: 'en' }}
+                meta={[{ name: 'description', content: siteDescription }]}
+                title={`${post.frontmatter.title} | ${siteTitle}`}
+              />
 
-          {next && (
-            <Button
-              href={next.fields.slug}
-              icon={<NextIcon />}
-              label="Next"
-              reverse
-            />
-          )}
-        </Box>
+              <Box basis="medium" fill="true">
+                <Image
+                  round="small"
+                  fit="cover"
+                  title={post.frontmatter.title}
+                  alt={post.frontmatter.title}
+                  src={post.frontmatter.cover.childImageSharp.fluid.src}
+                />
+              </Box>
+              <Box pad="medium">
+                <Heading level="1">{post.frontmatter.title}</Heading>
+                <p>{post.frontmatter.date}</p>
+              </Box>
+            </header>
+            <Box pad="medium">
+              <main>
+                <div dangerouslySetInnerHTML={{ __html: post.html }} />
+              </main>
+            </Box>
+          </Box>
+          <aside>
+            <Box direction="row" justify="center" gap="large" margin="medium">
+              {previous && (
+                <Button
+                  href={previous.fields.slug}
+                  icon={<PreviousIcon />}
+                  label="Previous"
+                />
+              )}
+
+              {next && (
+                <Button
+                  href={next.fields.slug}
+                  icon={<NextIcon />}
+                  label="Next"
+                  reverse
+                />
+              )}
+            </Box>
+          </aside>
+        </article>
       </Layout>
     )
   }

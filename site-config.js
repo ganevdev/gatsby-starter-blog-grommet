@@ -1,10 +1,16 @@
 module.exports = {
   // Site Info:
-  title: 'Gatsby Starter Blog',
-  author: 'Kyle Mathews',
-  description: 'A starter blog demonstrating what Gatsby can do.',
-  siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
-  footerText: '© 2018 copyrate',
+  title: 'Starter Gatsby Blog',
+  description: 'This is a DEMO site! SSG - Gatsby JS, UI - Grommet v2',
+  siteUrl: '',
+  footerText: '2018', // You can use Markdown markup here
+
+  // Author Info:
+  author: 'Ivan Ganev',
+  authorImage:
+    'https://pbs.twimg.com/profile_images/986603715732934656/7A4Nt68k_400x400.jpg',
+  authorBio:
+    "Hello, I'm Ivan Ganev and I made this blog starter for Gatsby js using UI Grommet v2. <br><br>Repo of this starter: [github.com/ganevru/gatsby-starter-blog-grommet](https://github.com/ganevru/gatsby-starter-blog-grommet)", // You can use Markdown markup here
 
   // Site Style:
   font: 'Merriweather',
@@ -16,7 +22,7 @@ module.exports = {
   // pathPrefix: null,
   // logo: path.resolve(__dirname, 'src/images/icon.png'),
   // social: {
-  //   twitter: `gatsbyjs`,
-  //   fbAppId: `966242223397117`,
+  //   twitter: ``,
+  //   fbAppId: ``,
   // },
 }

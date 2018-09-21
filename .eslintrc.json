@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "parser": "babel-eslint",
+  "plugins": ["flowtype"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "graphql": true
+  },
+  "rules": {
+    "flowtype/space-after-type-colon": 0,
+    "flowtype/space-before-type-colon": 0,
+    "no-unexpected-multiline": 2,
+    "react/forbid-prop-types": 0,
+    "react/jsx-wrap-multilines": 0,
+    "react/no-danger": 0,
+    "react/require-default-props": 0
+  }
+}

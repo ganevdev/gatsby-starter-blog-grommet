@@ -22,20 +22,22 @@ class BlogIndex extends Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={siteTitle}
         />
-        {posts.map(({ node }) => {
-          const title = get(node, 'frontmatter.title') || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <CardPost
-                link={node.fields.slug}
-                cover={node.frontmatter.cover.childImageSharp.fluid.src}
-                title={title}
-                date={node.frontmatter.date}
-                htmlExcerpt={{ __html: node.excerpt }}
-              />
-            </div>
-          )
-        })}
+        <main>
+          {posts.map(({ node }) => {
+            const title = get(node, 'frontmatter.title') || node.fields.slug
+            return (
+              <div key={node.fields.slug}>
+                <CardPost
+                  link={node.fields.slug}
+                  cover={node.frontmatter.cover.childImageSharp.fluid.src}
+                  title={title}
+                  date={node.frontmatter.date}
+                  htmlExcerpt={{ __html: node.excerpt }}
+                />
+              </div>
+            )
+          })}
+        </main>
       </Layout>
     )
   }

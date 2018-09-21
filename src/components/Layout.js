@@ -6,16 +6,17 @@ import { injectGlobal } from 'styled-components'
 import { siteTheme } from '../site-theme'
 import siteConfig from '../../site-config'
 
-import Navbar from './Navbar'
+import SiteHeader from './SiteHeader'
 import CardProfile from './CardProfile'
-import Footer from './Footer'
+import SiteFooter from './SiteFooter'
 
 injectGlobal`
   img {
     border-radius: 12px;
+    max-width: 100%;
   }
   body {
-    margin: 0
+    margin: 0;
   }
   a:hover {
     opacity: 0.8;
@@ -34,15 +35,17 @@ export default class Template extends Component {
             margin="small"
             align="center"
           >
-            <Navbar />
+            <SiteHeader />
             <Box direction="row-responsive">
-              <Box width="medium">
-                <CardProfile />
-              </Box>
               <Box width="large">{this.props.children}</Box>
+              <aside>
+                <Box width="medium">
+                  <CardProfile />
+                </Box>
+              </aside>
             </Box>
           </Box>
-          <Footer />
+          <SiteFooter />
         </Grommet>
       </div>
     )
