@@ -2,6 +2,10 @@
   "name": "gatsby-starter-blog-grommet",
   "description": "Starter Gatsby Blog wish Grommet v2",
   "homepage": "https://github.com/ganevru/gatsby-starter-blog-grommet",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ganevru/gatsby-starter-blog-grommet.git"
+  },
   "version": "1.0.0",
   "author": "Ivan Ganev <iganevru@gmail.com>",
   "keywords": [

@@ -4,6 +4,7 @@ module.exports = {
   siteMetadata: {
     ...siteConfig,
   },
+  pathPrefix: '/gatsby-starter-blog-grommet',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -38,7 +39,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        // trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
     `gatsby-plugin-feed`,

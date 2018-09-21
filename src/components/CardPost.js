@@ -48,7 +48,6 @@ export default class extends Component {
               <BoxCover
                 basis="medium"
                 fill="true"
-                // round="small"
                 background={{ image: `url(${this.props.cover})` }}
               />
               <Box pad="medium">
