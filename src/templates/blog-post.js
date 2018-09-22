@@ -49,20 +49,15 @@ class BlogPostTemplate extends React.Component {
           <aside>
             <Box direction="row" justify="center" gap="large" margin="medium">
               {previous && (
-                <Button
-                  href={previous.fields.slug}
-                  icon={<PreviousIcon />}
-                  label="Previous"
-                />
+                <Link to={previous.fields.slug}>
+                  <Button onClick icon={<PreviousIcon />} label="Previous" />
+                </Link>
               )}
 
               {next && (
-                <Button
-                  href={next.fields.slug}
-                  icon={<NextIcon />}
-                  label="Next"
-                  reverse
-                />
+                <Link to={next.fields.slug}>
+                  <Button onClick icon={<NextIcon />} label="Next" reverse />
+                </Link>
               )}
             </Box>
           </aside>
