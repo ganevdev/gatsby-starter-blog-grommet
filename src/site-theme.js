@@ -7,13 +7,13 @@ export const siteTheme = {
     font: {
       family: siteConfig.font,
     },
-    heading: {
-      font: {
-        family: siteConfig.fontHeadings,
-      },
-    },
     colors: {
       brand: siteConfig.brandColor,
+    },
+  },
+  heading: {
+    font: {
+      family: siteConfig.fontHeadings,
     },
   },
 }

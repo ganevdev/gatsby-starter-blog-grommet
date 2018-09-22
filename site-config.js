@@ -3,7 +3,7 @@ module.exports = {
   title: 'Starter Gatsby Blog',
   description: 'This is a DEMO site! SSG - Gatsby JS, UI - Grommet v2',
   siteUrl: 'https://ganevru.github.io/gatsby-starter-blog-grommet/',
-  footerText: '2018', // You can use Markdown markup here
+  footerText: '**2018**', // You can use Markdown markup here
 
   // Services:
   googleAnalyticsTrackingId: `ADD YOUR TRACKING ID HERE`,
@@ -16,8 +16,8 @@ module.exports = {
     "Hello, I'm Ivan Ganev and I made this blog starter for Gatsby js using UI Grommet v2. <br><br>Repo of this starter: [github.com/ganevru/gatsby-starter-blog-grommet](https://github.com/ganevru/gatsby-starter-blog-grommet)", // You can use Markdown markup here
 
   // Site Style:
-  font: 'Merriweather',
-  fontHeadings: 'Merriweather',
+  font: 'Roboto', // Roboto
+  fontHeadings: 'Merriweather', // Merriweather
   brandColor: '#7D4CDB', // #7D4CDB
   backgroundColor: '#fff', // #fff
 

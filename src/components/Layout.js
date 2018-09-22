@@ -12,14 +12,14 @@ import SiteFooter from './SiteFooter'
 
 injectGlobal`
   img {
-    border-radius: 12px;
+    border-radius: 14px;
     max-width: 100%;
   }
   body {
     margin: 0;
   }
   a:hover {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 `
 
