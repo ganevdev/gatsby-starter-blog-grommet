@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import { Grommet, Box, Grid, Heading, Image, Button } from 'grommet'
+import { Grommet, Box, Grid, Heading, Image, Button, Text } from 'grommet'
 import { Previous as PreviousIcon, Next as NextIcon } from 'grommet-icons'
 
 import Layout from '../components/Layout'
@@ -35,12 +35,16 @@ class BlogPostTemplate extends React.Component {
                   src={post.frontmatter.cover.childImageSharp.fluid.src}
                 />
               </Box>
-              <Box pad="medium">
-                <Heading level="1">{post.frontmatter.title}</Heading>
-                <p>{post.frontmatter.date}</p>
+              <Box pad={{ left: 'medium', right: 'medium', top: 'medium' }}>
+                <Heading margin="small" level="1">
+                  {post.frontmatter.title}
+                </Heading>
+                <Text margin={{ bottom: 'small' }}>
+                  {post.frontmatter.date}
+                </Text>
               </Box>
             </header>
-            <Box pad="medium">
+            <Box pad={{ left: 'medium', right: 'medium' }}>
               <main>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
               </main>
