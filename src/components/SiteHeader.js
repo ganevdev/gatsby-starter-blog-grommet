@@ -5,7 +5,7 @@ import siteConfig from '../../site-config'
 export default () => (
   <header>
     <Box margin="small">
-      <Anchor href="/">
+      <Anchor href={siteConfig.siteUrl}>
         <Heading textAlign="center" color="brand" margin="small">
           {siteConfig.title}
         </Heading>
