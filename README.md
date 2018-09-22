@@ -19,7 +19,7 @@ Demo: [ganevru.github.io/gatsby-starter-blog-grommet](https://ganevru.github.io/
   
 ---
 
-## Prerequisites
+## Prerequisites:
 
 The best place to start using Gatsby: [Gatsbyjs.org/tutorial/part-one](https://www.gatsbyjs.org/tutorial/part-one)
 
