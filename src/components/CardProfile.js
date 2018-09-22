@@ -1,5 +1,6 @@
 import React from 'react'
-import { Box, Text, Image, Markdown } from 'grommet'
+import { Box, Text, Image, Markdown, Anchor, Button } from 'grommet'
+import { Twitter, Reddit, Github } from 'grommet-icons'
 
 import siteConfig from '../../site-config'
 
@@ -26,9 +27,37 @@ export default () => (
           />
         </Box>
         <Box>
-          <Text weight="bold" size="large">
+          <Text weight="bold" size="large" margin={{ left: 'small' }}>
             {siteConfig.author}
           </Text>
+          <Box direction="row">
+            {siteConfig.social.twitter.length > 1 ? (
+              <Button
+                href={`https://twitter.com/${siteConfig.social.twitter}`}
+                icon={<Twitter color="brand" size="small" />}
+              />
+            ) : (
+              ''
+            )}
+
+            {siteConfig.social.github.length > 1 ? (
+              <Button
+                href={`https://github.com/${siteConfig.social.github}`}
+                icon={<Github color="brand" size="small" />}
+              />
+            ) : (
+              ''
+            )}
+
+            {siteConfig.social.reddit.length > 1 ? (
+              <Button
+                href={`https://reddit.com/user/${siteConfig.social.reddit}`}
+                icon={<Reddit color="brand" size="small" />}
+              />
+            ) : (
+              ''
+            )}
+          </Box>
         </Box>
       </Box>
       <Text size="small">
