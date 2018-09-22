@@ -5,6 +5,9 @@ module.exports = {
   siteUrl: 'https://ganevru.github.io/gatsby-starter-blog-grommet/',
   footerText: '2018', // You can use Markdown markup here
 
+  // Services:
+  googleAnalyticsTrackingId: `ADD YOUR TRACKING ID HERE`,
+
   // Author Info:
   author: 'Ivan Ganev',
   authorImage:
