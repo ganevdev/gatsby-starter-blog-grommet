@@ -28,3 +28,19 @@ Install Gatsby cli (if you have not already):
 ```text
 npm install --global gatsby-cli
 ```
+
+Download and install:
+
+```text
+gatsby new blog-grommet https://github.com/Ganevru/gatsby-starter-blog-grommet
+```
+
+```text
+cd blog-grommet
+```
+
+Running in development:
+
+```text
+gatsby develop
+```
