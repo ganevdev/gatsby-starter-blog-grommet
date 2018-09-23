@@ -1,6 +1,6 @@
 # Gatsby Starter Blog Grommet
 
-[GatsbyJS](https://www.gatsbyjs.org/) v2 starter for creating a blog. Based on [Grommet](https://v2.grommet.io/) v2 UI.
+[GatsbyJS v2](https://www.gatsbyjs.org/) starter for creating a blog. Based on [Grommet v2](https://v2.grommet.io/) UI.
 
 Demo: [ganevru.github.io/gatsby-starter-blog-grommet](https://ganevru.github.io/gatsby-starter-blog-grommet/)
 
