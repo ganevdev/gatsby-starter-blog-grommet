@@ -26,15 +26,20 @@ class BlogPostTemplate extends React.Component {
                 title={`${post.frontmatter.title} | ${siteTitle}`}
               />
 
-              <Box basis="medium" fill="true">
-                <Image
-                  round="small"
-                  fit="cover"
-                  title={post.frontmatter.title}
-                  alt={post.frontmatter.title}
-                  src={post.frontmatter.cover.childImageSharp.fluid.src}
-                />
-              </Box>
+              {post.frontmatter.cover === null ? (
+                ''
+              ) : (
+                <Box basis="medium" fill="true">
+                  <Image
+                    round="small"
+                    fit="cover"
+                    title={post.frontmatter.title}
+                    alt={post.frontmatter.title}
+                    src={post.frontmatter.cover.childImageSharp.fluid.src}
+                  />
+                </Box>
+              )}
+
               <Box pad={{ left: 'medium', right: 'medium', top: 'medium' }}>
                 <Heading margin="small" level="1">
                   {post.frontmatter.title}
@@ -91,7 +96,7 @@ export const pageQuery = graphql`
         cover {
           childImageSharp {
             fluid(maxWidth: 1024) {
-              ...GatsbyImageSharpFluid
+              src
             }
           }
         }

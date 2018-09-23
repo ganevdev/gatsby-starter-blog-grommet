@@ -27,13 +27,25 @@ class BlogIndex extends Component {
             const title = get(node, 'frontmatter.title') || node.fields.slug
             return (
               <div key={node.fields.slug}>
-                <CardPost
-                  link={node.fields.slug}
-                  cover={node.frontmatter.cover.childImageSharp.fluid.src}
-                  title={title}
-                  date={node.frontmatter.date}
-                  htmlExcerpt={{ __html: node.excerpt }}
-                />
+                {node.frontmatter.cover === null ? (
+                  <CardPost
+                    link={node.fields.slug}
+                    // cover={node.frontmatter.cover.childImageSharp.fluid.src}
+                    cover=""
+                    title={title}
+                    date={node.frontmatter.date}
+                    htmlExcerpt={{ __html: node.excerpt }}
+                  />
+                ) : (
+                  <CardPost
+                    link={node.fields.slug}
+                    cover={node.frontmatter.cover.childImageSharp.fluid.src}
+                    // cover="/stop.jpg"
+                    title={title}
+                    date={node.frontmatter.date}
+                    htmlExcerpt={{ __html: node.excerpt }}
+                  />
+                )}
               </div>
             )
           })}

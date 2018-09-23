@@ -1,7 +1,6 @@
 ---
-title: New Beginnings
+title: New Beginnings - no image post
 date: '2015-05-28T22:40:32.169Z'
-cover: './maple-leaves.jpg'
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and

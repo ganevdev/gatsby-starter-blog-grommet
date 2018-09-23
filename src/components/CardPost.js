@@ -45,11 +45,16 @@ export default class extends Component {
                 left: 'small',
               }}
             >
-              <BoxCover
-                basis="medium"
-                fill="true"
-                background={{ image: `url(${this.props.cover})` }}
-              />
+              {this.props.cover < 1 ? (
+                ''
+              ) : (
+                <BoxCover
+                  basis="medium"
+                  fill="true"
+                  background={{ image: `url(${this.props.cover})` }}
+                />
+              )}
+
               <Box pad="medium">
                 <Heading margin="xsmall" level="2">
                   {this.props.title}
