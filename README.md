@@ -9,7 +9,7 @@ Demo: [ganevru.github.io/gatsby-starter-blog-grommet](https://ganevru.github.io/
 ## Features:
 
 * [Gatsby v2](https://www.gatsbyjs.org/)
-* [Grommet](https://v2.grommet.io/) v2 UI
+* [Grommet v2](https://v2.grommet.io/) UI
 * Easily configurable - see site-config.js in the root
 * Blog posts previews in card style
 * Responsive Design, optimized for Mobile devices
