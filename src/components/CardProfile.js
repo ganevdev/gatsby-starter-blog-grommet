@@ -34,7 +34,7 @@ export default () => (
             {siteConfig.social.twitter.length > 1 ? (
               <Button
                 href={`https://twitter.com/${siteConfig.social.twitter}`}
-                icon={<Twitter color='brand' size='small' />}
+                icon={<Twitter size='small' />}
               />
             ) : (
               ''
@@ -43,7 +43,7 @@ export default () => (
             {siteConfig.social.github.length > 1 ? (
               <Button
                 href={`https://github.com/${siteConfig.social.github}`}
-                icon={<Github color='brand' size='small' />}
+                icon={<Github size='small' />}
               />
             ) : (
               ''
@@ -52,7 +52,7 @@ export default () => (
             {siteConfig.social.reddit.length > 1 ? (
               <Button
                 href={`https://reddit.com/user/${siteConfig.social.reddit}`}
-                icon={<Reddit color='brand' size='small' />}
+                icon={<Reddit size='small' />}
               />
             ) : (
               ''

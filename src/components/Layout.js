@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Grommet, Box } from 'grommet'
 
 import { injectGlobal } from 'styled-components'
@@ -23,31 +23,33 @@ injectGlobal`
   }
 `
 
-export default class Template extends Component {
-  render () {
-    return (
-      <div>
-        <Grommet theme={siteTheme}>
-          <Box
-            background={siteConfig.backgroundColor}
-            style={{ minHeight: '100vh' }}
-            responsive
-            margin='small'
-            align='center'
-          >
-            <SiteHeader />
-            <Box direction='row-responsive'>
-              <Box width='large'>{this.props.children}</Box>
-              <aside>
-                <Box width='medium'>
-                  <CardProfile />
-                </Box>
-              </aside>
-            </Box>
+export default (props) => {
+  return (
+    <div>
+
+      <Grommet theme={siteTheme}>
+
+        <Box
+          background={siteConfig.backgroundColor}
+          style={{ minHeight: '100vh' }}
+          responsive
+          margin='small'
+          align='center'
+        >
+          <SiteHeader />
+          <Box direction='row-responsive'>
+            <Box width='large'>{props.children}</Box>
+            <aside>
+              <Box width='medium'>
+                <CardProfile />
+              </Box>
+            </aside>
           </Box>
-          <SiteFooter />
-        </Grommet>
-      </div>
-    )
-  }
+        </Box>
+        <SiteFooter />
+
+      </Grommet>
+
+    </div>
+  )
 }

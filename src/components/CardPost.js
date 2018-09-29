@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import { Box, Text, Heading } from 'grommet'
 
@@ -21,53 +21,51 @@ const BoxCover = styled(Box)`
   border-bottom-left-radius: 0px;
 `
 
-export default class extends Component {
-  render () {
-    return (
-      <article>
-        <CardHover>
-          <Link
-            to={this.props.link}
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              textColor: 'none'
+export default (props) => {
+  return (
+    <article>
+      <CardHover>
+        <Link
+          to={props.link}
+          style={{
+            boxShadow: 'none',
+            textDecoration: 'none',
+            textColor: 'none'
+          }}
+        >
+          <Box
+            round='small'
+            elevation='small'
+            background='light-1'
+            margin={{
+              top: 'small',
+              bottom: 'medium',
+              right: 'small',
+              left: 'small'
             }}
           >
-            <Box
-              round='small'
-              elevation='small'
-              background='light-1'
-              margin={{
-                top: 'small',
-                bottom: 'medium',
-                right: 'small',
-                left: 'small'
-              }}
-            >
-              {this.props.cover < 1 ? (
-                ''
-              ) : (
-                <BoxCover
-                  basis='medium'
-                  fill='true'
-                  background={{ image: `url(${this.props.cover})` }}
-                />
-              )}
+            {props.cover < 1 ? (
+              ''
+            ) : (
+              <BoxCover
+                basis='medium'
+                fill='true'
+                background={{ image: `url(${props.cover})` }}
+              />
+            )}
 
-              <Box pad='medium'>
-                <Heading margin='xsmall' level='2'>
-                  {this.props.title}
-                </Heading>
-                <Text dangerouslySetInnerHTML={this.props.htmlExcerpt} />
-                <Text margin={{ top: 'small' }} size='small'>
-                  {this.props.date}
-                </Text>
-              </Box>
+            <Box pad='medium'>
+              <Heading margin='xsmall' level='2'>
+                {props.title}
+              </Heading>
+              <Text dangerouslySetInnerHTML={props.htmlExcerpt} />
+              <Text margin={{ top: 'small' }} size='small'>
+                {props.date}
+              </Text>
             </Box>
-          </Link>
-        </CardHover>
-      </article>
-    )
-  }
+          </Box>
+        </Link>
+      </CardHover>
+    </article>
+  )
 }

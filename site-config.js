@@ -1,6 +1,6 @@
 module.exports = {
   //
-  // Change information to your own.
+  // Change information to your own:
   //
   // Site Info:
   title: 'Starter Gatsby Blog',
@@ -34,4 +34,3 @@ module.exports = {
   // pathPrefix: null,
   // logo: path.resolve(__dirname, 'src/images/icon.png')
 }
-
