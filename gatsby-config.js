@@ -2,7 +2,7 @@ const siteConfig = require('./site-config')
 
 module.exports = {
   siteMetadata: {
-    ...siteConfig,
+    ...siteConfig
   },
   pathPrefix: '/gatsby-starter-blog-grommet',
   plugins: [
@@ -10,8 +10,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
+        name: 'pages'
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -20,27 +20,27 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1024,
-            },
+              maxWidth: 1024
+            }
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
           },
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-        ],
-      },
+          'gatsby-remark-smartypants'
+        ]
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: siteConfig.googleAnalyticsTrackingId,
-      },
+        trackingId: siteConfig.googleAnalyticsTrackingId
+      }
     },
     `gatsby-plugin-feed`,
     {
@@ -52,12 +52,10 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/gatsby-icon.png`,
-      },
+        icon: `src/assets/gatsby-icon.png`
+      }
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-flow`,
-  ],
+    `gatsby-plugin-styled-components` ]
 }

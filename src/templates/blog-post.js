@@ -3,13 +3,13 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import { Grommet, Box, Grid, Heading, Image, Button, Text } from 'grommet'
+import { Box, Heading, Image, Button, Text } from 'grommet'
 import { Previous as PreviousIcon, Next as NextIcon } from 'grommet-icons'
 
 import Layout from '../components/Layout'
 
 class BlogPostTemplate extends React.Component {
-  render() {
+  render () {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteDescription = post.excerpt
@@ -18,7 +18,7 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location}>
         <article>
-          <Box round="small" margin="small">
+          <Box round='small' margin='small'>
             <header>
               <Helmet
                 htmlAttributes={{ lang: 'en' }}
@@ -29,10 +29,10 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.cover === null ? (
                 ''
               ) : (
-                <Box basis="medium" fill="true">
+                <Box basis='medium' fill='true'>
                   <Image
-                    round="small"
-                    fit="cover"
+                    round='small'
+                    fit='cover'
                     title={post.frontmatter.title}
                     alt={post.frontmatter.title}
                     src={post.frontmatter.cover.childImageSharp.fluid.src}
@@ -41,7 +41,7 @@ class BlogPostTemplate extends React.Component {
               )}
 
               <Box pad={{ left: 'medium', right: 'medium', top: 'medium' }}>
-                <Heading margin="small" level="1">
+                <Heading margin='small' level='1'>
                   {post.frontmatter.title}
                 </Heading>
                 <Text margin={{ bottom: 'small' }}>
@@ -56,16 +56,16 @@ class BlogPostTemplate extends React.Component {
             </Box>
           </Box>
           <aside>
-            <Box direction="row" justify="center" gap="large" margin="medium">
+            <Box direction='row' justify='center' gap='large' margin='medium'>
               {previous && (
                 <Link to={previous.fields.slug}>
-                  <Button onClick icon={<PreviousIcon />} label="Previous" />
+                  <Button onClick icon={<PreviousIcon />} label='Previous' />
                 </Link>
               )}
 
               {next && (
                 <Link to={next.fields.slug}>
-                  <Button onClick icon={<NextIcon />} label="Next" reverse />
+                  <Button onClick icon={<NextIcon />} label='Next' reverse />
                 </Link>
               )}
             </Box>

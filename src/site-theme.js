@@ -5,15 +5,15 @@ import siteConfig from '../site-config'
 export const siteTheme = {
   global: {
     font: {
-      family: siteConfig.font,
+      family: siteConfig.font
     },
     colors: {
-      brand: siteConfig.brandColor,
-    },
+      brand: siteConfig.brandColor
+    }
   },
   heading: {
     font: {
-      family: siteConfig.fontHeadings,
-    },
-  },
+      family: siteConfig.fontHeadings
+    }
+  }
 }

@@ -18,7 +18,7 @@ module.exports = {
   social: {
     twitter: 'ganevru',
     github: 'ganevru',
-    reddit: 'ganevru',
+    reddit: 'ganevru'
   },
 
   // Services:
@@ -28,9 +28,10 @@ module.exports = {
   font: 'Roboto', // Roboto
   fontHeadings: 'Merriweather', // Merriweather
   brandColor: '#7D4CDB', // #7D4CDB
-  backgroundColor: '#fff', // #fff
+  backgroundColor: '#fff' // #fff
 
   // TODO:
   // pathPrefix: null,
   // logo: path.resolve(__dirname, 'src/images/icon.png')
 }
+

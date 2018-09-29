@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grommet, Box, Grid } from 'grommet'
+import { Grommet, Box } from 'grommet'
 
 import { injectGlobal } from 'styled-components'
 
@@ -10,7 +10,7 @@ import SiteHeader from './SiteHeader'
 import CardProfile from './CardProfile'
 import SiteFooter from './SiteFooter'
 
-injectGlobal`
+injectGlobal` 
   img {
     border-radius: 14px;
     max-width: 100%;
@@ -24,7 +24,7 @@ injectGlobal`
 `
 
 export default class Template extends Component {
-  render() {
+  render () {
     return (
       <div>
         <Grommet theme={siteTheme}>
@@ -32,14 +32,14 @@ export default class Template extends Component {
             background={siteConfig.backgroundColor}
             style={{ minHeight: '100vh' }}
             responsive
-            margin="small"
-            align="center"
+            margin='small'
+            align='center'
           >
             <SiteHeader />
-            <Box direction="row-responsive">
-              <Box width="large">{this.props.children}</Box>
+            <Box direction='row-responsive'>
+              <Box width='large'>{this.props.children}</Box>
               <aside>
-                <Box width="medium">
+                <Box width='medium'>
                   <CardProfile />
                 </Box>
               </aside>

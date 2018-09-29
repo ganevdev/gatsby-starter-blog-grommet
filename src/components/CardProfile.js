@@ -1,40 +1,40 @@
 import React from 'react'
-import { Box, Text, Image, Markdown, Anchor, Button } from 'grommet'
+import { Box, Text, Image, Markdown, Button } from 'grommet'
 import { Twitter, Reddit, Github } from 'grommet-icons'
 
 import siteConfig from '../../site-config'
 
 export default () => (
   <section>
-    <Box round="small" pad="medium" margin="small" background="light-2">
-      <Box direction="row">
+    <Box round='small' pad='medium' margin='small' background='light-2'>
+      <Box direction='row'>
         <Box
           pad={{
             top: 'none',
             bottom: 'medium',
             right: 'medium',
-            left: 'none',
+            left: 'none'
           }}
-          round="large"
-          height="xsmall"
-          width="xsmall"
+          round='large'
+          height='xsmall'
+          width='xsmall'
         >
           <Image
-            fit="contain"
+            fit='contain'
             title={siteConfig.author}
             alt={siteConfig.author}
             src={siteConfig.authorImage}
           />
         </Box>
         <Box>
-          <Text weight="bold" size="large" margin={{ left: 'small' }}>
+          <Text weight='bold' size='large' margin={{ left: 'small' }}>
             {siteConfig.author}
           </Text>
-          <Box direction="row">
+          <Box direction='row'>
             {siteConfig.social.twitter.length > 1 ? (
               <Button
                 href={`https://twitter.com/${siteConfig.social.twitter}`}
-                icon={<Twitter color="brand" size="small" />}
+                icon={<Twitter color='brand' size='small' />}
               />
             ) : (
               ''
@@ -43,7 +43,7 @@ export default () => (
             {siteConfig.social.github.length > 1 ? (
               <Button
                 href={`https://github.com/${siteConfig.social.github}`}
-                icon={<Github color="brand" size="small" />}
+                icon={<Github color='brand' size='small' />}
               />
             ) : (
               ''
@@ -52,7 +52,7 @@ export default () => (
             {siteConfig.social.reddit.length > 1 ? (
               <Button
                 href={`https://reddit.com/user/${siteConfig.social.reddit}`}
-                icon={<Reddit color="brand" size="small" />}
+                icon={<Reddit color='brand' size='small' />}
               />
             ) : (
               ''
@@ -60,7 +60,7 @@ export default () => (
           </Box>
         </Box>
       </Box>
-      <Text size="small">
+      <Text size='small'>
         <Markdown>{siteConfig.authorBio}</Markdown>
       </Text>
     </Box>
