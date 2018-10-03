@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { Box, Text, Heading } from 'grommet'
+import { Box, Heading, Text } from 'grommet'
 
+import { Link } from 'gatsby'
+import React from 'react'
 import styled from 'styled-components'
 
 // Target another styled component on hover
@@ -21,7 +21,7 @@ const BoxCover = styled(Box)`
   border-bottom-left-radius: 0px;
 `
 
-export default (props) => {
+export default props => {
   return (
     <article>
       <CardHover>
