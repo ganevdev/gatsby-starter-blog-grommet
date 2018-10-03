@@ -3,7 +3,7 @@ module.exports = {
   // Change information to your own:
   //
   // Site Info:
-  title: 'Starter Gatsby Blog',
+  title: 'Gatsby Starter Blog Grommet',
   description: 'This is a DEMO site! SSG - Gatsby JS, UI - Grommet v2',
   siteUrl: 'https://ganevru.github.io/gatsby-starter-blog-grommet/',
   footerText:
