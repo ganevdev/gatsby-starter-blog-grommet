@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
 import { graphql } from 'gatsby'
-import get from 'lodash/get'
 import Helmet from 'react-helmet'
+import React, { Component } from 'react'
+import get from 'lodash/get'
 
-import Layout from '../components/Layout'
 import CardPost from '../components/CardPost'
+import Layout from '../components/Layout'
 
 class BlogIndex extends Component {
   render () {

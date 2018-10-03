@@ -1,16 +1,16 @@
-import React from 'react'
-import { Grommet, Box } from 'grommet'
-
+import { Box, Grommet } from 'grommet'
 import { injectGlobal } from 'styled-components'
+import React from 'react'
 
-import { siteTheme } from '../site-theme'
 import siteConfig from '../../site-config'
 
-import SiteHeader from './SiteHeader'
+import { siteTheme } from '../site-theme'
+
 import CardProfile from './CardProfile'
 import SiteFooter from './SiteFooter'
+import SiteHeader from './SiteHeader'
 
-injectGlobal` 
+injectGlobal`
   img {
     border-radius: 14px;
     max-width: 100%;
@@ -23,12 +23,10 @@ injectGlobal`
   }
 `
 
-export default (props) => {
+export default props => {
   return (
     <div>
-
       <Grommet theme={siteTheme}>
-
         <Box
           background={siteConfig.backgroundColor}
           style={{ minHeight: '100vh' }}
@@ -47,9 +45,7 @@ export default (props) => {
           </Box>
         </Box>
         <SiteFooter />
-
       </Grommet>
-
     </div>
   )
 }

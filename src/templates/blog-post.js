@@ -1,10 +1,9 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import { Box, Button, Heading, Image, Text } from 'grommet'
 import { Link, graphql } from 'gatsby'
+import { Next as NextIcon, Previous as PreviousIcon } from 'grommet-icons'
+import Helmet from 'react-helmet'
+import React from 'react'
 import get from 'lodash/get'
-
-import { Box, Heading, Image, Button, Text } from 'grommet'
-import { Previous as PreviousIcon, Next as NextIcon } from 'grommet-icons'
 
 import Layout from '../components/Layout'
 

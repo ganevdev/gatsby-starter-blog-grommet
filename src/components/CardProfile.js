@@ -1,6 +1,6 @@
+import { Box, Button, Image, Markdown, Text } from 'grommet'
+import { Github, Reddit, Twitter } from 'grommet-icons'
 import React from 'react'
-import { Box, Text, Image, Markdown, Button } from 'grommet'
-import { Twitter, Reddit, Github } from 'grommet-icons'
 
 import siteConfig from '../../site-config'
 

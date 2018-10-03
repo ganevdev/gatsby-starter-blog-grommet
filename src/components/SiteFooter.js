@@ -1,5 +1,6 @@
-import React from 'react'
 import { Box, Markdown } from 'grommet'
+import React from 'react'
+
 import siteConfig from '../../site-config'
 
 export default () => (

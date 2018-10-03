@@ -1,6 +1,7 @@
-import React from 'react'
-import { Heading, Text, Box } from 'grommet'
+import { Box, Heading, Text } from 'grommet'
 import { Link } from 'gatsby'
+import React from 'react'
+
 import siteConfig from '../../site-config'
 
 export default () => (
