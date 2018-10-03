@@ -11,7 +11,7 @@ Demo: [ganevru.github.io/gatsby-starter-blog-grommet](https://ganevru.github.io/
 * [Gatsby v2](https://www.gatsbyjs.org/)
 * [Grommet v2](https://v2.grommet.io/) UI
 * Easily configurable - see site-config.js in the root
-* Blog posts previews in card style
+* Blog posts previews in card style (with a picture-cover or without)
 * Responsive Design, optimized for Mobile devices
 * [styled-components](https://www.styled-components.com) for style
 * [standard](https://github.com/standard/standard) - JavaScript Standard Style
