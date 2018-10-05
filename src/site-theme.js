@@ -9,6 +9,9 @@ export const siteTheme = {
     },
     colors: {
       brand: siteConfig.brandColor
+    },
+    breakpoints: {
+      narrow: 899
     }
   },
   heading: {
