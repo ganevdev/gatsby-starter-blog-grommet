@@ -16,45 +16,45 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <article>
-          <Box round='small' margin='small'>
-            <Helmet
-              htmlAttributes={{ lang: 'en' }}
-              meta={[{ name: 'description', content: siteDescription }]}
-              title={`${post.frontmatter.title} | ${siteTitle}`}
-            />
-            <div>
-              <header>
-                {post.frontmatter.cover === null ? (
-                  ''
-                ) : (
-                  <Box basis='medium' fill='true'>
-                    <Image
-                      round='small'
-                      fit='cover'
-                      title={post.frontmatter.title}
-                      alt={post.frontmatter.title}
-                      src={post.frontmatter.cover.childImageSharp.fluid.src}
-                    />
-                  </Box>
-                )}
+        <div>
+          <article>
+            <Box round='small' margin='small'>
+              <Helmet
+                htmlAttributes={{ lang: 'en' }}
+                meta={[{ name: 'description', content: siteDescription }]}
+                title={`${post.frontmatter.title} | ${siteTitle}`}
+              />
+              <div>
+                <header>
+                  {post.frontmatter.cover === null ? (
+                    ''
+                  ) : (
+                    <Box basis='medium' fill='true'>
+                      <Image
+                        round='small'
+                        fit='cover'
+                        title={post.frontmatter.title}
+                        alt={post.frontmatter.title}
+                        src={post.frontmatter.cover.childImageSharp.fluid.src}
+                      />
+                    </Box>
+                  )}
 
-                <Box pad={{ left: 'medium', right: 'medium', top: 'medium' }}>
-                  <Heading margin='small' level='1'>
-                    {post.frontmatter.title}
-                  </Heading>
-                  <Text margin={{ bottom: 'small' }}>
-                    {post.frontmatter.date}
-                  </Text>
-                </Box>
-              </header>
-            </div>
-            <Box pad={{ left: 'medium', right: 'medium' }}>
-              <main>
+                  <Box pad={{ left: 'medium', right: 'medium', top: 'medium' }}>
+                    <Heading margin='small' level='1'>
+                      {post.frontmatter.title}
+                    </Heading>
+                    <Text margin={{ bottom: 'small' }}>
+                      {post.frontmatter.date}
+                    </Text>
+                  </Box>
+                </header>
+              </div>
+              <Box pad={{ left: 'medium', right: 'medium' }}>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
-              </main>
+              </Box>
             </Box>
-          </Box>
+          </article>
           <aside>
             <Box direction='row' justify='center' gap='large' margin='medium'>
               {previous && (
@@ -70,7 +70,7 @@ class BlogPostTemplate extends React.Component {
               )}
             </Box>
           </aside>
-        </article>
+        </div>
       </Layout>
     )
   }

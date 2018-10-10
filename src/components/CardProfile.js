@@ -5,7 +5,7 @@ import React from 'react'
 import siteConfig from '../../site-config'
 
 export default () => (
-  <section>
+  <div>
     <Box round='small' pad='medium' margin='small' background='light-2'>
       <Box direction='row'>
         <Box
@@ -64,5 +64,5 @@ export default () => (
         <Markdown>{siteConfig.authorBio}</Markdown>
       </Text>
     </Box>
-  </section>
+  </div>
 )

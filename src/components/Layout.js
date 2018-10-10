@@ -35,14 +35,17 @@ export default props => {
           align='center'
         >
           <SiteHeader />
-          <Box direction='row-responsive'>
-            <Box width='large'>{props.children}</Box>
-            <aside>
+
+          <main>
+            <Box direction='row-responsive'>
+              <Box width='large'>{props.children}</Box>
               <Box width='medium'>
-                <CardProfile />
+                <aside>
+                  <CardProfile />
+                </aside>
               </Box>
-            </aside>
-          </Box>
+            </Box>
+          </main>
         </Box>
         <SiteFooter />
       </Grommet>
