@@ -1,4 +1,5 @@
 import { Box, Grommet } from 'grommet'
+import { dark, grommet, hpe } from 'grommet/themes'
 import { injectGlobal } from 'styled-components'
 import React from 'react'
 
@@ -23,17 +24,17 @@ injectGlobal`
   }
 `
 
+const THEMES = {
+  grommet,
+  hpe,
+  dark
+}
+
 export default props => {
   return (
-    <div>
+    <Grommet theme={THEMES[siteConfig.theme || 'grommet']}>
       <Grommet theme={siteTheme}>
-        <Box
-          background={siteConfig.backgroundColor}
-          style={{ minHeight: '100vh' }}
-          responsive
-          margin='small'
-          align='center'
-        >
+        <Box style={{ minHeight: '100vh' }} responsive align='center'>
           <SiteHeader />
 
           <main>
@@ -49,6 +50,6 @@ export default props => {
         </Box>
         <SiteFooter />
       </Grommet>
-    </div>
+    </Grommet>
   )
 }

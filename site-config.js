@@ -25,10 +25,10 @@ module.exports = {
   googleAnalyticsTrackingId: `ADD YOUR TRACKING ID HERE`,
 
   // Site Style:
-  font: 'Roboto', // Roboto
-  fontHeadings: 'Merriweather', // Merriweather
-  brandColor: '#7D4CDB', // #7D4CDB
-  backgroundColor: '#fff' // #fff
+  theme: 'grommet', // dark | hpe | grommet
+  font: '', // Roboto
+  fontHeadings: '', // Merriweather
+  brandColor: '' // #7D4CDB
 
   // TODO:
   // pathPrefix: null,

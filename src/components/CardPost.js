@@ -35,7 +35,7 @@ export default props => {
           <Box
             round='small'
             elevation='small'
-            background='light-1'
+            border
             margin={{
               top: 'small',
               bottom: 'medium',

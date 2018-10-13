@@ -6,7 +6,7 @@ import siteConfig from '../../site-config'
 
 export default () => (
   <div>
-    <Box round='small' pad='medium' margin='small' background='light-2'>
+    <Box round='small' pad='medium' margin='small' border>
       <Box direction='row'>
         <Box
           pad={{
