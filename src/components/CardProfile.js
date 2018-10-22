@@ -8,17 +8,7 @@ export default () => (
   <div>
     <Box round='small' pad='medium' margin='small' border>
       <Box direction='row'>
-        <Box
-          pad={{
-            top: 'none',
-            bottom: 'medium',
-            right: 'medium',
-            left: 'none'
-          }}
-          round='large'
-          height='xsmall'
-          width='xsmall'
-        >
+        <Box pad='medium' round='large' height='xsmall' width='xsmall'>
           <Image
             fit='contain'
             title={siteConfig.author}

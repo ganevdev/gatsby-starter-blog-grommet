@@ -29,7 +29,7 @@ class BlogPostTemplate extends React.Component {
                   {post.frontmatter.cover === null ? (
                     ''
                   ) : (
-                    <Box basis='medium' fill='true'>
+                    <Box basis='medium' fill>
                       <Image
                         round='small'
                         fit='cover'
@@ -40,7 +40,7 @@ class BlogPostTemplate extends React.Component {
                     </Box>
                   )}
 
-                  <Box pad={{ left: 'medium', right: 'medium', top: 'medium' }}>
+                  <Box pad='medium'>
                     <Heading margin='small' level='1'>
                       {post.frontmatter.title}
                     </Heading>
@@ -50,7 +50,7 @@ class BlogPostTemplate extends React.Component {
                   </Box>
                 </header>
               </div>
-              <Box pad={{ left: 'medium', right: 'medium' }}>
+              <Box pad='medium'>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
               </Box>
             </Box>

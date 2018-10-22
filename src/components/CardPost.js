@@ -48,7 +48,7 @@ export default props => {
             ) : (
               <BoxCover
                 basis='medium'
-                fill='true'
+                fill
                 background={{ image: `url(${props.cover})` }}
               />
             )}
