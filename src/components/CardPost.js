@@ -13,13 +13,6 @@ const CardHover = styled.div`
   }
 `
 
-const BoxCover = styled(Box)`
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
-`
-
 export default props => {
   return (
     <article>
@@ -46,7 +39,8 @@ export default props => {
             {props.cover < 1 ? (
               ''
             ) : (
-              <BoxCover
+              <Box
+                round={{ size: 'small', corner: 'top' }}
                 basis='medium'
                 fill
                 background={{ image: `url(${props.cover})` }}
@@ -54,9 +48,7 @@ export default props => {
             )}
 
             <Box pad='medium'>
-              <Heading margin='xsmall' level='2'>
-                {props.title}
-              </Heading>
+              <Heading level='2'>{props.title}</Heading>
               <Text dangerouslySetInnerHTML={props.htmlExcerpt} />
               <Text margin={{ top: 'small' }} size='small'>
                 {props.date}

@@ -41,9 +41,7 @@ class BlogPostTemplate extends React.Component {
                   )}
 
                   <Box pad='medium'>
-                    <Heading margin='small' level='1'>
-                      {post.frontmatter.title}
-                    </Heading>
+                    <Heading level='1'>{post.frontmatter.title}</Heading>
                     <Text margin={{ bottom: 'small' }}>
                       {post.frontmatter.date}
                     </Text>
