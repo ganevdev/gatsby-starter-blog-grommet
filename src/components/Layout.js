@@ -35,19 +35,22 @@ export default props => {
     <Grommet theme={THEMES[siteConfig.theme || 'grommet']}>
       <Grommet theme={siteTheme}>
         <GlobalStyle />
-        <Box style={{ minHeight: '100vh' }} responsive align='center'>
-          <SiteHeader />
-
-          <main>
-            <Box direction='row-responsive'>
-              <Box width='large'>{props.children}</Box>
-              <Box width='medium'>
-                <aside>
-                  <CardProfile />
-                </aside>
+        <Box direction='column' align='center'>
+          <Box width='xlarge'>
+            <SiteHeader />
+            <main>
+              <Box direction='row-responsive'>
+                <Box basis='large' flex='grow' direction='row-responsive'>
+                  {props.children}
+                </Box>
+                <Box basis='medium'>
+                  <aside>
+                    <CardProfile />
+                  </aside>
+                </Box>
               </Box>
-            </Box>
-          </main>
+            </main>
+          </Box>
         </Box>
         <SiteFooter />
       </Grommet>
