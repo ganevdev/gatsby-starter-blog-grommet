@@ -8,7 +8,12 @@ export default () => (
   <div>
     <Box round='small' pad='medium' margin='small' border>
       <Box direction='row'>
-        <Box pad='medium' round='large' height='xsmall' width='xsmall'>
+        <Box
+          pad={{ bottom: 'small', left: 'none', right: 'small' }}
+          round='large'
+          height='xsmall'
+          width='xsmall'
+        >
           <Image
             fit='contain'
             title={siteConfig.author}
@@ -24,7 +29,7 @@ export default () => (
             {siteConfig.social.twitter.length > 1 ? (
               <Button
                 href={`https://twitter.com/${siteConfig.social.twitter}`}
-                icon={<Twitter size='small' />}
+                icon={<Twitter size='medium' />}
               />
             ) : (
               ''
@@ -33,7 +38,7 @@ export default () => (
             {siteConfig.social.github.length > 1 ? (
               <Button
                 href={`https://github.com/${siteConfig.social.github}`}
-                icon={<Github size='small' />}
+                icon={<Github size='medium' />}
               />
             ) : (
               ''
@@ -42,7 +47,7 @@ export default () => (
             {siteConfig.social.reddit.length > 1 ? (
               <Button
                 href={`https://reddit.com/user/${siteConfig.social.reddit}`}
-                icon={<Reddit size='small' />}
+                icon={<Reddit size='medium' />}
               />
             ) : (
               ''
