@@ -54,7 +54,7 @@ class BlogPostTemplate extends React.Component {
             </Box>
           </article>
           <aside>
-            <Box direction='row' justify='center' gap='large' margin='medium'>
+            <Box direction='row' justify='center' gap='large' margin='large'>
               {previous && (
                 <Link to={previous.fields.slug}>
                   <Button onClick icon={<PreviousIcon />} label='Previous' />
