@@ -53,7 +53,9 @@ export default props => {
             )}
 
             <Box pad='medium'>
-              <Heading level='2'>{props.title}</Heading>
+              <Heading margin={{ vertical: 'small' }} level='2'>
+                {props.title}
+              </Heading>
               <Text dangerouslySetInnerHTML={props.htmlExcerpt} />
               <Text margin={{ top: 'small' }} size='small'>
                 {props.date}

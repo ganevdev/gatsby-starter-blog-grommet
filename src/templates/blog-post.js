@@ -29,19 +29,22 @@ class BlogPostTemplate extends React.Component {
                   {post.frontmatter.cover === null ? (
                     ''
                   ) : (
-                    <Box basis='medium' fill>
-                      <Image
-                        round='small'
-                        fit='cover'
-                        title={post.frontmatter.title}
-                        alt={post.frontmatter.title}
-                        src={post.frontmatter.cover.childImageSharp.fluid.src}
-                      />
+                    <Box round={{ size: 'small' }} overflow='hidden'>
+                      <Box basis='medium' fill>
+                        <Image
+                          fit='cover'
+                          title={post.frontmatter.title}
+                          alt={post.frontmatter.title}
+                          src={post.frontmatter.cover.childImageSharp.fluid.src}
+                        />
+                      </Box>
                     </Box>
                   )}
 
                   <Box pad='medium'>
-                    <Heading level='1'>{post.frontmatter.title}</Heading>
+                    <Heading margin={{ vertical: 'small' }} level='1'>
+                      {post.frontmatter.title}
+                    </Heading>
                     <Text margin={{ bottom: 'small' }}>
                       {post.frontmatter.date}
                     </Text>
