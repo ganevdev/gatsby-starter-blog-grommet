@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from 'grommet'
+import { Box, Heading, Text, Image } from 'grommet'
 import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
@@ -28,7 +28,11 @@ export default props => {
           <Box
             round='small'
             elevation='small'
-            border
+            border={{
+              side: 'all',
+              color: 'border',
+              size: 'xsmall'
+            }}
             margin={{
               top: 'small',
               bottom: 'medium',
@@ -37,14 +41,15 @@ export default props => {
             }}
           >
             {props.cover < 1 ? (
-              ''
+              <div />
             ) : (
-              <Box
-                round={{ size: 'small', corner: 'top' }}
-                basis='medium'
-                fill
-                background={{ image: `url(${props.cover})` }}
-              />
+              <div>
+                <Box round={{ size: 'small', corner: 'top' }} overflow='hidden'>
+                  <Box height='small' background='border'>
+                    <Image src={props.cover} fit='cover' />
+                  </Box>
+                </Box>
+              </div>
             )}
 
             <Box pad='medium'>

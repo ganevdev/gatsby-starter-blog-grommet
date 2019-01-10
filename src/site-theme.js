@@ -11,7 +11,7 @@ export const siteTheme = {
       brand: siteConfig.brandColor
     },
     breakpoints: {
-      narrow: 899
+      narrow: 1000
     }
   },
   heading: {

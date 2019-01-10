@@ -6,58 +6,68 @@ import siteConfig from '../../site-config'
 
 export default () => (
   <div>
-    <Box round='small' pad='medium' margin='small' border>
-      <Box direction='row'>
+    <Box
+      round='small'
+      pad='medium'
+      margin='small'
+      border
+      wrap
+      overflow='hidden'
+    >
+      <Box direction='row-responsive'>
         <Box
-          pad={{ bottom: 'small', left: 'none', right: 'small' }}
-          round='large'
+          margin={{ bottom: 'small', left: 'none', right: 'small' }}
+          round='small'
           height='xsmall'
           width='xsmall'
+          overflow='hidden'
         >
           <Image
-            fit='contain'
+            fit='cover'
             title={siteConfig.author}
             alt={siteConfig.author}
             src={siteConfig.authorImage}
           />
         </Box>
         <Box>
-          <Text weight='bold' size='large' margin={{ left: 'small' }}>
+          <Text weight='bold' size='large'>
             {siteConfig.author}
           </Text>
-          <Box direction='row'>
-            {siteConfig.social.twitter.length > 1 ? (
-              <Button
-                href={`https://twitter.com/${siteConfig.social.twitter}`}
-                icon={<Twitter size='medium' />}
-              />
-            ) : (
-              ''
-            )}
-
-            {siteConfig.social.github.length > 1 ? (
-              <Button
-                href={`https://github.com/${siteConfig.social.github}`}
-                icon={<Github size='medium' />}
-              />
-            ) : (
-              ''
-            )}
-
-            {siteConfig.social.reddit.length > 1 ? (
-              <Button
-                href={`https://reddit.com/user/${siteConfig.social.reddit}`}
-                icon={<Reddit size='medium' />}
-              />
-            ) : (
-              ''
-            )}
-          </Box>
         </Box>
       </Box>
-      <Text size='small'>
-        <Markdown>{siteConfig.authorBio}</Markdown>
-      </Text>
+      <Box direction='row' wrap>
+        {siteConfig.social.twitter.length > 1 ? (
+          <Button
+            href={`https://twitter.com/${siteConfig.social.twitter}`}
+            icon={<Twitter size='medium' />}
+          />
+        ) : (
+          ''
+        )}
+
+        {siteConfig.social.github.length > 1 ? (
+          <Button
+            href={`https://github.com/${siteConfig.social.github}`}
+            icon={<Github size='medium' />}
+          />
+        ) : (
+          ''
+        )}
+
+        {siteConfig.social.reddit.length > 1 ? (
+          <Button
+            href={`https://reddit.com/user/${siteConfig.social.reddit}`}
+            icon={<Reddit size='medium' />}
+          />
+        ) : (
+          ''
+        )}
+      </Box>
+      <Box overflow='hidden'>
+        <Text size='small'>
+          <Markdown>{siteConfig.authorBio}</Markdown>
+        </Text>
+      </Box>
     </Box>
   </div>
 )
