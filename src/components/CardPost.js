@@ -1,5 +1,6 @@
-import { Box, Heading, Text, Image } from 'grommet'
+import { Box, Heading, Image, Text } from 'grommet'
 import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -13,7 +14,7 @@ const CardHover = styled.div`
   }
 `
 
-export default props => {
+const CardPost = (props) => {
   return (
     <article>
       <CardHover>
@@ -67,3 +68,12 @@ export default props => {
     </article>
   )
 }
+CardPost.propTypes = {
+  link: PropTypes.string,
+  cover: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  htmlExcerpt: PropTypes.string,
+  date: PropTypes.string
+}
+
+export default CardPost

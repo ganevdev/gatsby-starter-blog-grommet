@@ -1,58 +1,61 @@
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import React, { Component } from 'react'
-import get from 'lodash/get'
+import PropTypes from 'prop-types'
+import React from 'react'
+import _ from 'lodash/fp'
 
 import CardPost from '../components/CardPost'
 import Layout from '../components/Layout'
 
-class BlogIndex extends Component {
-  render () {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const siteDescription = get(
-      this,
-      'props.data.site.siteMetadata.description'
-    )
-    const posts = get(this, 'props.data.allMarkdownRemark.edges')
+const BlogIndex = ({ data }) => {
+  const siteTitle = data.site.siteMetadata.title
+  const siteDescription = data.site.siteMetadata.description
+  const posts = data.allMarkdownRemark.edges
 
-    return (
-      <Layout location={this.props.location}>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={siteTitle}
-        />
-        <main>
-          {posts.map(({ node }) => {
-            const title = get(node, 'frontmatter.title') || node.fields.slug
-            return (
-              <div key={node.fields.slug}>
-                {node.frontmatter.cover === null ? (
-                  <CardPost
-                    link={node.fields.slug}
-                    // cover={node.frontmatter.cover.childImageSharp.fluid.src}
-                    cover=''
-                    title={title}
-                    date={node.frontmatter.date}
-                    htmlExcerpt={{ __html: node.excerpt }}
-                  />
-                ) : (
-                  <CardPost
-                    link={node.fields.slug}
-                    cover={node.frontmatter.cover.childImageSharp.fluid.src}
-                    // cover="/stop.jpg"
-                    title={title}
-                    date={node.frontmatter.date}
-                    htmlExcerpt={{ __html: node.excerpt }}
-                  />
-                )}
-              </div>
-            )
-          })}
-        </main>
-      </Layout>
-    )
-  }
+  return (
+    <Layout>
+      <Helmet
+        htmlAttributes={{ lang: 'en' }}
+        meta={[{ name: 'description', content: siteDescription }]}
+        title={siteTitle}
+      />
+      <main>
+        {posts.map(({ node }) => {
+          const title = _.getOr(
+            node.frontmatter.title,
+            'frontmatter.title',
+            node
+          )
+          return (
+            <div key={node.fields.slug}>
+              {node.frontmatter.cover === null ? (
+                <CardPost
+                  link={node.fields.slug}
+                  // cover={node.frontmatter.cover.childImageSharp.fluid.src}
+                  cover=''
+                  title={title}
+                  date={node.frontmatter.date}
+                  htmlExcerpt={{ __html: node.excerpt }}
+                />
+              ) : (
+                <CardPost
+                  link={node.fields.slug}
+                  cover={node.frontmatter.cover.childImageSharp.fluid.src}
+                  // cover="/stop.jpg"
+                  title={title}
+                  date={node.frontmatter.date}
+                  htmlExcerpt={{ __html: node.excerpt }}
+                />
+              )}
+            </div>
+          )
+        })}
+      </main>
+    </Layout>
+  )
+}
+BlogIndex.propTypes = {
+  data: PropTypes.object.isRequired
 }
 
 export default BlogIndex

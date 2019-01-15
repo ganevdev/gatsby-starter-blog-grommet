@@ -1,6 +1,7 @@
 import { Box, Grommet } from 'grommet'
 import { createGlobalStyle } from 'styled-components'
 import { dark, grommet, hpe } from 'grommet/themes'
+import PropTypes from 'prop-types'
 import React from 'react'
 
 import siteConfig from '../../site-config'
@@ -30,7 +31,7 @@ const THEMES = {
   dark
 }
 
-export default props => {
+const Layout = (props) => {
   return (
     <Grommet theme={THEMES[siteConfig.theme || 'grommet']}>
       <Grommet theme={siteTheme}>
@@ -57,3 +58,8 @@ export default props => {
     </Grommet>
   )
 }
+Layout.propTypes = {
+  children: PropTypes.node
+}
+
+export default Layout
