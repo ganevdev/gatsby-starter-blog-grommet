@@ -15,7 +15,6 @@ Demo: [ganevru.github.io/gatsby-starter-blog-grommet](https://ganevru.github.io/
 * Blog posts previews in card style (with a picture-cover or without)
 * Responsive Design, optimized for Mobile devices
 * [styled-components](https://www.styled-components.com) for style
-* [standard](https://github.com/standard/standard) - JavaScript Standard Style
   
 ---
 
