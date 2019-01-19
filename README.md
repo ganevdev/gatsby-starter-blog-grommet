@@ -15,6 +15,10 @@ Demo: [ganevru.github.io/gatsby-starter-blog-grommet](https://ganevru.github.io/
 * Blog posts previews in card style (with a picture-cover or without)
 * Responsive Design, optimized for Mobile devices
 * [styled-components](https://www.styled-components.com) for style
+
+TODO: 
+* switch between dark and light themes (most likely with Redux)
+* transition to TypeScript
   
 ---
 
