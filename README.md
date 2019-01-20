@@ -6,23 +6,29 @@ Demo: [ganevru.github.io/gatsby-starter-blog-grommet](https://ganevru.github.io/
 
 ---
 
-## Features:
+## Features
 
-* [Gatsby v2](https://www.gatsbyjs.org/)
-* [Grommet v2](https://v2.grommet.io/) UI
-* Easily configurable - see site-config.js in the root
-* Switch between grommet themes - dark, hpe and grommet (default)
-* Blog posts previews in card style (with a picture-cover or without)
-* Responsive Design, optimized for Mobile devices
-* [styled-components](https://www.styled-components.com) for style
+- Easily configurable - see site-config.js in the root
+- Switch between grommet themes - dark, hpe and grommet (default)
+- blog folder in the root for blog posts - just write a post in Markdown format taking as an example one of the templates
+- Blog posts previews in card style (with a picture-cover or without)
+- Responsive Design, optimized for Mobile devices
 
-TODO: 
-* switch between dark and light themes (most likely with Redux)
-* transition to TypeScript
-  
+## Technology
+
+- [Gatsby v2](https://www.gatsbyjs.org/) SSG
+- [Grommet v2](https://v2.grommet.io/) UI
+- [styled-components](https://www.styled-components.com) for style
+- [TypeScript](https://typescriptlang.org)
+- [tslint](https://palantir.github.io/tslint/) - linter for the TypeScript
+- [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky) - for linting before commit
+
+TODO:
+switch between dark and light themes (most likely with Redux)
+
 ---
 
-## Prerequisites:
+## Prerequisites
 
 The best place to start using Gatsby: [Gatsbyjs.org/tutorial/part-one](https://www.gatsbyjs.org/tutorial/part-one)
 
@@ -32,7 +38,7 @@ Install Gatsby cli (if you have not already):
 npm install --global gatsby-cli
 ```
 
-## Download and install:
+## Download and install
 
 ```text
 gatsby new blog-grommet https://github.com/Ganevru/gatsby-starter-blog-grommet
