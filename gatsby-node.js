@@ -50,7 +50,7 @@ exports.createPages = async ({ graphql, actions }) => {
       });
     });
   }
-  createPagesFun(allMarkdownRemark, blogPostTemplate);
+  await createPagesFun(allMarkdownRemark, blogPostTemplate);
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

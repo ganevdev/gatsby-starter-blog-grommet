@@ -1,4 +1,4 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { Box, Button, Heading, Image, Text } from 'grommet';
 import { Next as NextIcon, Previous as PreviousIcon } from 'grommet-icons';
 import * as _ from 'lodash/fp';
@@ -7,10 +7,10 @@ import Helmet from 'react-helmet';
 
 import Layout from '../components/Layout';
 
-const blogPost = (props) => {
-  const post = props.data.markdownRemark;
-  const siteTitle = props.data.site.siteMetadata.title;
-  const { previous, next } = props.pageContext;
+const blogPost = ({ data, pageContext }) => {
+  const post = data.markdownRemark;
+  const siteTitle = data.site.siteMetadata.title;
+  const { previous, next } = pageContext;
   const siteDescription = post.excerpt;
   return (
     <Layout>
