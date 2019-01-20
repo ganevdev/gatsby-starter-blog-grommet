@@ -1,8 +1,8 @@
-import siteConfig from '../site-config'
+import siteConfig from '../site-config';
 
 // https://github.com/grommet/grommet/wiki/Grommet-v2-theming-documentation
 // https://github.com/grommet/grommet/tree/NEXT/src/js/themes
-export const siteTheme = {
+export default {
   global: {
     font: {
       family: siteConfig.font
@@ -30,4 +30,4 @@ export const siteTheme = {
       family: siteConfig.fontHeadings
     }
   }
-}
+};

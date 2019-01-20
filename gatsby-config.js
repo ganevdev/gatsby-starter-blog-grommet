@@ -1,4 +1,4 @@
-const siteConfig = require('./site-config')
+const siteConfig = require('./site-config');
 
 module.exports = {
   siteMetadata: {
@@ -59,4 +59,4 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`
   ]
-}
+};

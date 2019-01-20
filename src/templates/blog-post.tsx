@@ -1,23 +1,22 @@
-import { Box, Button, Heading, Image, Text } from 'grommet'
-import { Link, graphql } from 'gatsby'
-import { Next as NextIcon, Previous as PreviousIcon } from 'grommet-icons'
-import Helmet from 'react-helmet'
-import PropTypes from 'prop-types'
-import React from 'react'
-import _ from 'lodash/fp'
+import { graphql, Link } from 'gatsby';
+import { Box, Button, Heading, Image, Text } from 'grommet';
+import { Next as NextIcon, Previous as PreviousIcon } from 'grommet-icons';
+import * as _ from 'lodash/fp';
+import * as React from 'react';
+import Helmet from 'react-helmet';
 
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 
 const blogPost = (props) => {
-  const post = props.data.markdownRemark
-  const siteTitle = _.get(props, 'data.site.siteMetadata.title')
-  const siteDescription = post.excerpt
-  const { previous, next } = props.pageContext
+  const post = props.data.markdownRemark;
+  const siteTitle = props.data.site.siteMetadata.title;
+  const { previous, next } = props.pageContext;
+  const siteDescription = post.excerpt;
   return (
-    <Layout location={props.location}>
+    <Layout>
       <div>
         <article>
-          <Box round='small' margin='small'>
+          <Box round="small" margin="small">
             <Helmet
               htmlAttributes={{ lang: 'en' }}
               meta={[{ name: 'description', content: siteDescription }]}
@@ -28,10 +27,10 @@ const blogPost = (props) => {
                 {post.frontmatter.cover === null ? (
                   ''
                 ) : (
-                  <Box round={{ size: 'small' }} overflow='hidden'>
-                    <Box basis='medium' fill>
+                  <Box round={{ size: 'small' }} overflow="hidden">
+                    <Box basis="medium" fill={true}>
                       <Image
-                        fit='cover'
+                        fit="cover"
                         title={post.frontmatter.title}
                         alt={post.frontmatter.title}
                         src={post.frontmatter.cover.childImageSharp.fluid.src}
@@ -40,8 +39,8 @@ const blogPost = (props) => {
                   </Box>
                 )}
 
-                <Box pad='medium'>
-                  <Heading margin={{ vertical: 'small' }} level='1'>
+                <Box pad="medium">
+                  <Heading margin={{ vertical: 'small' }} level="1">
                     {post.frontmatter.title}
                   </Heading>
                   <Text margin={{ bottom: 'small' }}>
@@ -50,37 +49,37 @@ const blogPost = (props) => {
                 </Box>
               </header>
             </div>
-            <Box pad='medium'>
+            <Box pad="medium">
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </Box>
           </Box>
         </article>
         <aside>
-          <Box direction='row' justify='center' gap='large' margin='large'>
+          <Box direction="row" justify="center" gap="large" margin="large">
             {previous && (
-              <Link to={previous.fields.slug}>
-                <Button onClick icon={<PreviousIcon />} label='Previous' />
-              </Link>
+              <Button
+                href={previous.fields.slug}
+                icon={<PreviousIcon />}
+                label="Previous"
+              />
             )}
 
             {next && (
-              <Link to={next.fields.slug}>
-                <Button onClick icon={<NextIcon />} label='Next' reverse />
-              </Link>
+              <Button
+                href={next.fields.slug}
+                icon={<NextIcon />}
+                label="Next"
+                reverse={true}
+              />
             )}
           </Box>
         </aside>
       </div>
     </Layout>
-  )
-}
-blogPost.propTypes = {
-  data: PropTypes.object.isRequired,
-  pageContext: PropTypes.object.isRequired,
-  location: PropTypes.object
-}
+  );
+};
 
-export default blogPost
+export default blogPost;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -107,4 +106,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

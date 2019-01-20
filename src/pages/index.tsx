@@ -1,16 +1,15 @@
-import { graphql } from 'gatsby'
-import Helmet from 'react-helmet'
-import PropTypes from 'prop-types'
-import React from 'react'
-import _ from 'lodash/fp'
+import { graphql } from 'gatsby';
+import * as _ from 'lodash/fp';
+import * as React from 'react';
+import Helmet from 'react-helmet';
 
-import CardPost from '../components/CardPost'
-import Layout from '../components/Layout'
+import CardPost from '../components/CardPost';
+import Layout from '../components/Layout';
 
-const BlogIndex = ({ data }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const siteDescription = data.site.siteMetadata.description
-  const posts = data.allMarkdownRemark.edges
+const BlogIndex = (props) => {
+  const siteTitle = props.data.site.siteMetadata.title;
+  const siteDescription = props.data.site.siteMetadata.description;
+  const posts = props.data.allMarkdownRemark.edges;
 
   return (
     <Layout>
@@ -25,14 +24,13 @@ const BlogIndex = ({ data }) => {
             node.frontmatter.title,
             'frontmatter.title',
             node
-          )
+          );
           return (
             <div key={node.fields.slug}>
               {node.frontmatter.cover === null ? (
                 <CardPost
                   link={node.fields.slug}
-                  // cover={node.frontmatter.cover.childImageSharp.fluid.src}
-                  cover=''
+                  cover=""
                   title={title}
                   date={node.frontmatter.date}
                   htmlExcerpt={{ __html: node.excerpt }}
@@ -41,24 +39,20 @@ const BlogIndex = ({ data }) => {
                 <CardPost
                   link={node.fields.slug}
                   cover={node.frontmatter.cover.childImageSharp.fluid.src}
-                  // cover="/stop.jpg"
                   title={title}
                   date={node.frontmatter.date}
                   htmlExcerpt={{ __html: node.excerpt }}
                 />
               )}
             </div>
-          )
+          );
         })}
       </main>
     </Layout>
-  )
-}
-BlogIndex.propTypes = {
-  data: PropTypes.object.isRequired
-}
+  );
+};
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -90,4 +84,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
