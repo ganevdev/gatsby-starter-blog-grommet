@@ -24,7 +24,7 @@ Demo: [https://gatsby-starter-blog-grommet.netlify.com/](https://gatsby-starter-
 - [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky) - for linting before commit
 
 TODO:
-switch between dark and light themes (most likely with Redux)
+switch between dark and light themes
 
 ---
 
