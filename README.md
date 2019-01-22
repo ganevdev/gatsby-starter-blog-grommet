@@ -2,7 +2,7 @@
 
 [GatsbyJS v2](https://www.gatsbyjs.org/) starter for creating a blog. Based on [Grommet v2](https://v2.grommet.io/) UI.
 
-Demo: [ganevru.github.io/gatsby-starter-blog-grommet](https://ganevru.github.io/gatsby-starter-blog-grommet/)
+Demo: [https://gatsby-starter-blog-grommet.netlify.com/](https://gatsby-starter-blog-grommet.netlify.com/)
 
 ---
 
@@ -24,7 +24,7 @@ Demo: [ganevru.github.io/gatsby-starter-blog-grommet](https://ganevru.github.io/
 - [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky) - for linting before commit
 
 TODO:
-switch between dark and light themes (most likely with Redux)
+switch between dark and light themes
 
 ---
 
