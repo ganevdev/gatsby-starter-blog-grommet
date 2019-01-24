@@ -29,8 +29,4 @@ module.exports = {
   font: '', // Roboto
   fontHeadings: '', // Merriweather
   brandColor: '' // #7D4CDB
-
-  // TODO:
-  // pathPrefix: null,
-  // logo: path.resolve(__dirname, 'src/images/icon.png')
 };

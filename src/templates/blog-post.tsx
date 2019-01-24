@@ -7,10 +7,34 @@ import Helmet from 'react-helmet';
 
 import Layout from '../components/Layout';
 
-const blogPost = ({ data, pageContext }) => {
+interface BlogPostProps {
+  data: {
+    markdownRemark: {
+      excerpt: string;
+      frontmatter: {
+        title: string;
+        cover?: {
+          childImageSharp: { fluid: { src: string } };
+        };
+        date?: string;
+      };
+      html: string;
+    };
+    site: {
+      siteMetadata: {
+        title: string;
+      };
+    };
+  };
+  pageContext: {
+    previous: any;
+    next: any;
+  };
+}
+
+const blogPost = ({ data, pageContext: { previous, next } }: BlogPostProps) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
-  const { previous, next } = pageContext;
   const siteDescription = post.excerpt;
   return (
     <Layout>
@@ -24,9 +48,7 @@ const blogPost = ({ data, pageContext }) => {
             />
             <div>
               <header>
-                {post.frontmatter.cover === null ? (
-                  ''
-                ) : (
+                {post.frontmatter.cover ? (
                   <Box round={{ size: 'small' }} overflow="hidden">
                     <Box basis="medium" fill={true}>
                       <Image
@@ -37,9 +59,11 @@ const blogPost = ({ data, pageContext }) => {
                       />
                     </Box>
                   </Box>
+                ) : (
+                  ''
                 )}
 
-                <Box pad="medium">
+                <Box pad={{ horizontal: 'medium' }}>
                   <Heading margin={{ vertical: 'small' }} level="1">
                     {post.frontmatter.title}
                   </Heading>
@@ -49,7 +73,7 @@ const blogPost = ({ data, pageContext }) => {
                 </Box>
               </header>
             </div>
-            <Box pad="medium">
+            <Box pad={{ horizontal: 'medium' }}>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </Box>
           </Box>
