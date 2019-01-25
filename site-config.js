@@ -25,7 +25,7 @@ module.exports = {
   googleAnalyticsTrackingId: `ADD YOUR TRACKING ID HERE`,
 
   // Site Style:
-  theme: 'grommet', // dark | base | grommet
+  theme: 'grommet', // grommet | dark | base | dxc | aruba
   font: '', // Roboto
   fontHeadings: '', // Merriweather
   brandColor: '' // #7D4CDB

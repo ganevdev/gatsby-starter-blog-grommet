@@ -1,5 +1,7 @@
 import { Box, Grommet } from 'grommet';
 import { base, dark, grommet } from 'grommet/themes';
+import { dxc } from 'grommet-theme-dxc';
+import { aruba } from 'grommet-theme-aruba';
 import * as React from 'react';
 import { createGlobalStyle } from 'styled-components';
 
@@ -26,10 +28,16 @@ const GlobalStyle = createGlobalStyle`
 const THEMES = {
   grommet,
   base,
-  dark
+  dark,
+  dxc,
+  aruba
 };
 
-const Layout = (props: any) => (
+interface LayoutProps {
+  children: any;
+}
+
+const Layout = ({ children }: LayoutProps) => (
   <Grommet theme={THEMES[siteConfig.theme || 'grommet']}>
     <Grommet theme={siteTheme}>
       <GlobalStyle />
@@ -39,7 +47,7 @@ const Layout = (props: any) => (
           <main>
             <Box direction="row-responsive">
               <Box basis="large" flex="grow" direction="row-responsive">
-                {props.children}
+                {children}
               </Box>
               <Box basis="medium">
                 <aside>

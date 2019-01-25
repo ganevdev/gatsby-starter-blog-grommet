@@ -3,21 +3,21 @@
 export = site_config;
 
 declare const site_config: {
-  author: string;
-  authorBio: string;
-  authorImage: string;
-  brandColor: string;
-  description: string;
-  font: string;
-  fontHeadings: string;
-  footerText: string;
-  googleAnalyticsTrackingId: string;
+  author?: string;
+  authorBio?: string;
+  authorImage?: string;
+  brandColor?: string;
+  description?: string;
+  font?: string;
+  fontHeadings?: string;
+  footerText?: string;
+  googleAnalyticsTrackingId?: string;
   siteUrl: string;
-  social: {
-    github: string;
-    reddit: string;
-    twitter: string;
+  social?: {
+    github?: string;
+    reddit?: string;
+    twitter?: string;
   };
-  theme: string;
-  title: string;
+  theme?: string;
+  title?: string;
 };

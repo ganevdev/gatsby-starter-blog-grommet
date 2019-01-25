@@ -53,6 +53,8 @@
     "gatsby-transformer-sharp": "^2.1.10",
     "grommet": "^2.3.1",
     "grommet-icons": "^4.1.0",
+    "grommet-theme-aruba": "^0.1.0",
+    "grommet-theme-dxc": "^0.1.0",
     "lodash": "^4.17.11",
     "markdown-to-jsx": "6.9.0",
     "react": "^16.7.0",
