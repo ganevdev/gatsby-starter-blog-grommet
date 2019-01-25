@@ -64,7 +64,7 @@ const blogPost = ({ data, pageContext: { previous, next } }: BlogPostProps) => {
                 )}
 
                 <Box pad={{ horizontal: 'medium' }}>
-                  <Heading margin={{ vertical: 'small' }} level="1">
+                  <Heading margin={{ top: 'large', bottom: 'small' }} level="1">
                     {post.frontmatter.title}
                   </Heading>
                   <Text margin={{ bottom: 'small' }}>

@@ -13,7 +13,6 @@ import SiteHeader from './SiteHeader';
 
 const GlobalStyle = createGlobalStyle`
   img {
-    /* border-radius: 14px; */
     max-width: 100%;
   }
   body {
