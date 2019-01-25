@@ -10,7 +10,7 @@ Demo: [https://gatsby-starter-blog-grommet.netlify.com/](https://gatsby-starter-
 
 - Easily configurable - see site-config.js in the root
 - Switch between grommet themes - dark, base and grommet (default)
-- blog folder in the root for blog posts - just write a post in Markdown format taking as an example one of the templates
+- Content/blog folder in the root for blog posts - just write a post in Markdown format taking as an example one of the templates
 - Blog posts previews in card style (with a picture-cover or without)
 - Responsive Design, optimized for Mobile devices
 
