@@ -30,7 +30,7 @@ export default () => (
           />
         </Box>
         <Box>
-          <Text weight="bold" size="large">
+          <Text weight="bold" size="large" color="text">
             {siteConfig.author}
           </Text>
         </Box>
@@ -64,7 +64,7 @@ export default () => (
         )}
       </Box>
       <Box overflow="hidden">
-        <Text size="small">
+        <Text size="small" color="text">
           <Markdown>{siteConfig.authorBio}</Markdown>
         </Text>
       </Box>

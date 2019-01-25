@@ -18,7 +18,9 @@ export default () => (
           {siteConfig.title}
         </Heading>
       </Link>
-      <Text textAlign="center">{siteConfig.description}</Text>
+      <Text color="text" textAlign="center">
+        {siteConfig.description}
+      </Text>
     </Box>
   </header>
 );
