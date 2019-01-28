@@ -13,11 +13,12 @@ declare const site_config: {
   footerText?: string;
   googleAnalyticsTrackingId?: string;
   siteUrl: string;
-  social?: {
+  social: {
     github?: string;
     reddit?: string;
     twitter?: string;
   };
-  theme?: string;
+  darkTheme?: string;
+  ligthTheme?: string;
   title?: string;
 };

@@ -36,7 +36,7 @@ export default () => (
         </Box>
       </Box>
       <Box direction="row" wrap={true}>
-        {siteConfig.social.twitter.length > 1 ? (
+        {siteConfig.social.twitter ? (
           <Button
             href={`https://twitter.com/${siteConfig.social.twitter}`}
             icon={<Twitter size="medium" />}
@@ -45,7 +45,7 @@ export default () => (
           ''
         )}
 
-        {siteConfig.social.github.length > 1 ? (
+        {siteConfig.social.github ? (
           <Button
             href={`https://github.com/${siteConfig.social.github}`}
             icon={<Github size="medium" />}
@@ -54,7 +54,7 @@ export default () => (
           ''
         )}
 
-        {siteConfig.social.reddit.length > 1 ? (
+        {siteConfig.social.reddit ? (
           <Button
             href={`https://reddit.com/user/${siteConfig.social.reddit}`}
             icon={<Reddit size="medium" />}
