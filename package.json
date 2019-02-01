@@ -76,6 +76,9 @@
     "lint-staged": "^8.1.0",
     "prettier": "^1.16.1"
   },
+  "engines": {
+    "node": ">=8"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
