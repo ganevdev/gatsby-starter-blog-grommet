@@ -25,8 +25,8 @@ export default (props) => (
           weight="bold"
         >
           {props.themeType === 'dark'
-            ? 'Switch to a Light'
-            : 'Switch to a Dark'}
+            ? 'Enable Light Theme'
+            : 'Enable Dark Theme'}
         </Text>
       </Box>
     </Button>
