@@ -15,6 +15,7 @@ Demo: [https://gatsby-starter-blog-grommet.netlify.com/](https://gatsby-starter-
 - Content/blog folder in the root for blog posts - just write a post in Markdown format taking as an example one of the templates
 - Blog posts previews in card style (with a picture-cover or without)
 - Responsive Design, optimized for Mobile devices
+- Change between light and dark themes
 
 ## Technology
 
@@ -24,9 +25,7 @@ Demo: [https://gatsby-starter-blog-grommet.netlify.com/](https://gatsby-starter-
 - [TypeScript](https://typescriptlang.org)
 - [ESLint](https://eslint.org/) and [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
 - [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky) - for linting before commit
-
-TODO:
-switch between dark and light themes
+- [redux](https://redux.js.org/) and [react-redux](https://react-redux.js.org/), example [gatsby using-redux](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-redux)
 
 ---
 
