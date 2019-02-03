@@ -2,8 +2,9 @@ import { Box, Grommet } from 'grommet';
 import { base, dark, grommet } from 'grommet/themes';
 import { dxc } from 'grommet-theme-dxc';
 import { aruba } from 'grommet-theme-aruba';
-import React, { useState } from 'react';
+import React from 'react';
 import { createGlobalStyle } from 'styled-components';
+import { connect } from 'react-redux';
 
 import siteConfig from '../../site-config';
 
@@ -48,40 +49,50 @@ function themeByThemeType(themeType?: string): string {
   }
 }
 
-function Layout(props) {
-  const [themeType, setThemeType] = useState('light');
-
-  return (
-    <Grommet theme={THEMES[themeByThemeType(themeType)]}>
-      <Grommet theme={siteTheme}>
-        <GlobalStyle />
-        <Box direction="column" align="center">
-          <Box width="xlarge">
-            <SiteHeader />
-            <main>
-              <Box direction="row-responsive">
-                <Box basis="large" flex="grow" direction="row-responsive">
-                  {props.children}
-                </Box>
-                <Box basis="medium">
-                  <aside>
-                    <CardProfile />
-                    <LightSwitch
-                      onClick={() =>
-                        setThemeType(themeType === 'light' ? 'dark' : 'light')
-                      }
-                      themeType={themeType}
-                    />
-                  </aside>
-                </Box>
+const Theme = ({ children, themeType, themeSwitch }) => (
+  <Grommet theme={THEMES[themeByThemeType(themeType)]}>
+    <Grommet theme={siteTheme}>
+      <GlobalStyle />
+      <Box direction="column" align="center">
+        <Box width="xlarge">
+          <SiteHeader />
+          <main>
+            <Box direction="row-responsive">
+              <Box basis="large" flex="grow" direction="row-responsive">
+                {children}
               </Box>
-            </main>
-          </Box>
+              <Box basis="medium">
+                <aside>
+                  <CardProfile />
+                  {siteConfig.darkTheme ? (
+                    <LightSwitch onClick={themeSwitch} themeType={themeType} />
+                  ) : (
+                    <></>
+                  )}
+                </aside>
+              </Box>
+            </Box>
+          </main>
         </Box>
-        <SiteFooter />
-      </Grommet>
+      </Box>
+      <SiteFooter />
     </Grommet>
-  );
-}
+  </Grommet>
+);
 
-export default Layout;
+const mapStateToProps = ({ themeType }) => {
+  return { themeType };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return { themeSwitch: () => dispatch({ type: `CHANGE_THEME` }) };
+};
+
+const ConnectedTheme = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Theme);
+
+export default function Layout({ children }) {
+  return <ConnectedTheme>{children}</ConnectedTheme>;
+}
