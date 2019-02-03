@@ -2,8 +2,9 @@ import { Box, Grommet } from 'grommet';
 import { base, dark, grommet } from 'grommet/themes';
 import { dxc } from 'grommet-theme-dxc';
 import { aruba } from 'grommet-theme-aruba';
-import * as React from 'react';
+import React from 'react';
 import { createGlobalStyle } from 'styled-components';
+import { connect } from 'react-redux';
 
 import siteConfig from '../../site-config';
 
@@ -12,6 +13,7 @@ import siteTheme from '../site-theme';
 import CardProfile from './CardProfile';
 import SiteFooter from './SiteFooter';
 import SiteHeader from './SiteHeader';
+import LightSwitch from './LightSwitch';
 
 const GlobalStyle = createGlobalStyle`
   img {
@@ -33,12 +35,22 @@ const THEMES = {
   aruba
 };
 
-interface LayoutProps {
-  children: any;
+function themeByThemeType(themeType?: string): string {
+  if (themeType) {
+    if (themeType === 'dark' && siteConfig.darkTheme) {
+      return siteConfig.darkTheme;
+    } else if (themeType === 'ligth' && siteConfig.ligthTheme) {
+      return siteConfig.ligthTheme;
+    } else {
+      return 'grommet';
+    }
+  } else {
+    return 'grommet';
+  }
 }
 
-const Layout = ({ children }: LayoutProps) => (
-  <Grommet theme={THEMES[siteConfig.theme || 'grommet']}>
+const Theme = ({ children, themeType, themeSwitch }) => (
+  <Grommet theme={THEMES[themeByThemeType(themeType)]}>
     <Grommet theme={siteTheme}>
       <GlobalStyle />
       <Box direction="column" align="center">
@@ -52,6 +64,11 @@ const Layout = ({ children }: LayoutProps) => (
               <Box basis="medium">
                 <aside>
                   <CardProfile />
+                  {siteConfig.darkTheme ? (
+                    <LightSwitch onClick={themeSwitch} themeType={themeType} />
+                  ) : (
+                    <></>
+                  )}
                 </aside>
               </Box>
             </Box>
@@ -63,4 +80,19 @@ const Layout = ({ children }: LayoutProps) => (
   </Grommet>
 );
 
-export default Layout;
+const mapStateToProps = ({ themeType }) => {
+  return { themeType };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return { themeSwitch: () => dispatch({ type: `CHANGE_THEME` }) };
+};
+
+const ConnectedTheme = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Theme);
+
+export default function Layout({ children }) {
+  return <ConnectedTheme>{children}</ConnectedTheme>;
+}
