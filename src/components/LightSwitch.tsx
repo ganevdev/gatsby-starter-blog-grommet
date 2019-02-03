@@ -6,6 +6,7 @@ export default (props) => (
   <Box margin="small">
     <Button onClick={props.onClick} plain>
       <Box
+        align="center"
         direction="row-responsive"
         pad={{ vertical: 'small', horizontal: 'medium' }}
         round="small"
@@ -14,7 +15,6 @@ export default (props) => (
           color: 'border',
           size: 'xsmall'
         }}
-        align="center"
         elevation="small"
       >
         <Actions size="medium" />
