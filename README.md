@@ -16,6 +16,7 @@ Demo: [https://gatsby-starter-blog-grommet.netlify.com/](https://gatsby-starter-
 - Blog posts previews in card style (with a picture-cover or without)
 - Responsive Design, optimized for Mobile devices
 - Change between light and dark themes
+- Sticky Sidebar - [react-sticky](https://github.com/captivationsoftware/react-sticky)
 
 ## Technology
 
