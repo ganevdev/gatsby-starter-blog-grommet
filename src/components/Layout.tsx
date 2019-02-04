@@ -66,7 +66,6 @@ const Theme = ({ children, themeType, themeSwitch }) => (
                   <Sticky>
                     {({ style }) => (
                       <aside style={style}>
-                        TRUE
                         <Sidebar
                           siteConfig={siteConfig}
                           themeSwitch={themeSwitch}
