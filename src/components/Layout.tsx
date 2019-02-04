@@ -11,10 +11,9 @@ import siteConfig from '../../site-config';
 
 import siteTheme from '../site-theme';
 
-import CardProfile from './CardProfile';
 import SiteFooter from './SiteFooter';
 import SiteHeader from './SiteHeader';
-import LightSwitch from './LightSwitch';
+import Sidebar from './Sidebar';
 
 const GlobalStyle = createGlobalStyle`
   img {
@@ -67,15 +66,12 @@ const Theme = ({ children, themeType, themeSwitch }) => (
                   <Sticky>
                     {({ style }) => (
                       <aside style={style}>
-                        <CardProfile />
-                        {siteConfig.darkTheme ? (
-                          <LightSwitch
-                            onClick={themeSwitch}
-                            themeType={themeType}
-                          />
-                        ) : (
-                          <></>
-                        )}
+                        TRUE
+                        <Sidebar
+                          siteConfig={siteConfig}
+                          themeSwitch={themeSwitch}
+                          themeType={themeType}
+                        />
                       </aside>
                     )}
                   </Sticky>
