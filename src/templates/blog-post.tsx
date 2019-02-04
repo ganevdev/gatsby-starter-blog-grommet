@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby';
+import { navigate, graphql } from 'gatsby';
 import { Box, Button, Heading, Image, Text } from 'grommet';
 import { Next as NextIcon, Previous as PreviousIcon } from 'grommet-icons';
 import * as _ from 'lodash/fp';
@@ -64,7 +64,10 @@ const blogPost = ({ data, pageContext: { previous, next } }: BlogPostProps) => {
                 )}
 
                 <Box pad={{ horizontal: 'medium' }}>
-                  <Heading margin={{ top: 'large', bottom: 'small' }} level="1">
+                  <Heading
+                    margin={{ top: 'large', bottom: 'small' }}
+                    level="1"
+                  >
                     {post.frontmatter.title}
                   </Heading>
                   <Text margin={{ bottom: 'small' }}>
@@ -82,18 +85,20 @@ const blogPost = ({ data, pageContext: { previous, next } }: BlogPostProps) => {
           <Box direction="row" justify="center" gap="large" margin="large">
             {previous && (
               <Button
-                href={previous.fields.slug}
+                onClick={() => navigate(previous.fields.slug)}
                 icon={<PreviousIcon />}
                 label="Previous"
+                hoverIndicator
               />
             )}
 
             {next && (
               <Button
-                href={next.fields.slug}
+                onClick={() => navigate(next.fields.slug)}
                 icon={<NextIcon />}
                 label="Next"
                 reverse={true}
+                hoverIndicator
               />
             )}
           </Box>
