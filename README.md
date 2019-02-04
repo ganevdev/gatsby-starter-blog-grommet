@@ -25,7 +25,7 @@ Demo: [https://gatsby-starter-blog-grommet.netlify.com/](https://gatsby-starter-
 - [styled-components](https://www.styled-components.com) for style
 - [TypeScript](https://typescriptlang.org)
 - [ESLint](https://eslint.org/) and [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
-- [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky) - for linting before commit. It also runs "gatsby build" - this ensures that the site will work after the commit. This makes commits slow, but it helps to avoid mistakes - something that works in gatsby develop may not work in gatsby build. If you do not need this, you can simply delete the "husky" settings from package.json.
+- [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky) - for linting before commit. It also runs "gatsby build" - this ensures that the site will work after the commit. This makes commits slow, but it helps to avoid mistakes - something that works in gatsby develop may not work in gatsby build. If you do not need this, you can simply delete "husky" settings from package.json.
 - [redux](https://redux.js.org/) and [react-redux](https://react-redux.js.org/), example [gatsby using-redux](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-redux)
 
 ---
