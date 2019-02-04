@@ -5,6 +5,7 @@ import { aruba } from 'grommet-theme-aruba';
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { connect } from 'react-redux';
+import { StickyContainer, Sticky } from 'react-sticky';
 
 import siteConfig from '../../site-config';
 
@@ -57,21 +58,30 @@ const Theme = ({ children, themeType, themeSwitch }) => (
         <Box width="xlarge">
           <SiteHeader />
           <main>
-            <Box direction="row-responsive">
-              <Box basis="large" flex="grow" direction="row-responsive">
-                {children}
+            <StickyContainer>
+              <Box direction="row-responsive">
+                <Box basis="large" flex="grow" direction="row-responsive">
+                  {children}
+                </Box>
+                <Box basis="medium">
+                  <Sticky>
+                    {({ style }) => (
+                      <aside style={style}>
+                        <CardProfile />
+                        {siteConfig.darkTheme ? (
+                          <LightSwitch
+                            onClick={themeSwitch}
+                            themeType={themeType}
+                          />
+                        ) : (
+                          <></>
+                        )}
+                      </aside>
+                    )}
+                  </Sticky>
+                </Box>
               </Box>
-              <Box basis="medium">
-                <aside>
-                  <CardProfile />
-                  {siteConfig.darkTheme ? (
-                    <LightSwitch onClick={themeSwitch} themeType={themeType} />
-                  ) : (
-                    <></>
-                  )}
-                </aside>
-              </Box>
-            </Box>
+            </StickyContainer>
           </main>
         </Box>
       </Box>
