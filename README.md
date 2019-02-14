@@ -1,6 +1,6 @@
 # Gatsby Starter Blog Grommet
 
-[![Build Status](https://travis-ci.com/Ganevru/gatsby-starter-blog-grommet.svg?branch=master)](https://travis-ci.com/Ganevru/gatsby-starter-blog-grommet) [![Netlify Status](https://api.netlify.com/api/v1/badges/43404826-099b-417a-b840-e731760dea4f/deploy-status)](https://app.netlify.com/sites/gatsby-starter-blog-grommet/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/43404826-099b-417a-b840-e731760dea4f/deploy-status)](https://app.netlify.com/sites/gatsby-starter-blog-grommet/deploys) [![Build Status](https://travis-ci.com/Ganevru/gatsby-starter-blog-grommet.svg?branch=master)](https://travis-ci.com/Ganevru/gatsby-starter-blog-grommet)
 
 [GatsbyJS v2](https://www.gatsbyjs.org/) starter for creating a blog. Based on [Grommet v2](https://v2.grommet.io/) UI.
 
