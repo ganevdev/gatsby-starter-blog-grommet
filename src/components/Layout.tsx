@@ -14,6 +14,7 @@ import siteTheme from '../site-theme';
 import SiteFooter from './SiteFooter';
 import SiteHeader from './SiteHeader';
 import Sidebar from './Sidebar';
+import { async } from 'q';
 
 const GlobalStyle = createGlobalStyle`
   img {
@@ -35,12 +36,12 @@ const THEMES = {
   aruba
 };
 
-function themeByThemeType(themeType?: string): string {
+ function themeByThemeType(themeType?: string): string {
   if (themeType) {
     if (themeType === 'dark' && siteConfig.darkTheme) {
       return siteConfig.darkTheme;
-    } else if (themeType === 'ligth' && siteConfig.ligthTheme) {
-      return siteConfig.ligthTheme;
+    } else if (themeType === 'light' && siteConfig.lightTheme) {
+      return siteConfig.lightTheme;
     } else {
       return 'grommet';
     }

@@ -19,6 +19,6 @@ declare const site_config: {
     twitter?: string;
   };
   darkTheme?: string;
-  ligthTheme?: string;
+  lightTheme?: string;
   title?: string;
 };
