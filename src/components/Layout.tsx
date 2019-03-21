@@ -14,7 +14,6 @@ import siteTheme from '../site-theme';
 import SiteFooter from './SiteFooter';
 import SiteHeader from './SiteHeader';
 import Sidebar from './Sidebar';
-import { async } from 'q';
 
 const GlobalStyle = createGlobalStyle`
   img {
